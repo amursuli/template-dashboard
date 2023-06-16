@@ -136,7 +136,8 @@ export class TwoColumnSidebarComponent implements OnInit {
       });
     }
     event.target.classList.add("active");
-    document.body.classList.remove('twocolumn-panel')
+    document.body.classList.remove('twocolumn-panel');
+    document.querySelector('.hamburger-icon')?.classList.add('open');
   }
 
   // remove active items of two-column-menu
