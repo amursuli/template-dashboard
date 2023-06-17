@@ -4,13 +4,12 @@ import { EventService } from '../../core/services/event.service';
 @Component({
   selector: 'app-vertical',
   templateUrl: './vertical.component.html',
-  styleUrls: ['./vertical.component.scss']
+  styleUrls: ['./vertical.component.scss'],
 })
 export class VerticalComponent implements OnInit {
-
   isCondensed = false;
 
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService) {}
 
   ngOnInit(): void {
     if (document.documentElement.getAttribute('data-layout') == 'semibox') {
@@ -29,17 +28,15 @@ export class VerticalComponent implements OnInit {
     window.addEventListener('resize', function () {
       if (document.documentElement.clientWidth <= 767) {
         document.documentElement.setAttribute('data-sidebar-size', '');
-        document.querySelector('.hamburger-icon')?.classList.add('open')
-      }
-      else if (document.documentElement.clientWidth <= 1024) {
+        document.querySelector('.hamburger-icon')?.classList.add('open');
+      } else if (document.documentElement.clientWidth <= 1024) {
         document.documentElement.setAttribute('data-sidebar-size', 'sm');
-        document.querySelector('.hamburger-icon')?.classList.add('open')
-      }
-      else if (document.documentElement.clientWidth >= 1024) {
+        document.querySelector('.hamburger-icon')?.classList.add('open');
+      } else if (document.documentElement.clientWidth >= 1024) {
         document.documentElement.setAttribute('data-sidebar-size', 'lg');
-        document.querySelector('.hamburger-icon')?.classList.remove('open')
+        document.querySelector('.hamburger-icon')?.classList.remove('open');
       }
-    })
+    });
   }
 
   /**
@@ -47,14 +44,21 @@ export class VerticalComponent implements OnInit {
    */
   onToggleMobileMenu() {
     document.body.classList.toggle('sidebar-enable');
-    const currentSIdebarSize = document.documentElement.getAttribute("data-sidebar-size");
+    const currentSIdebarSize = document.documentElement.getAttribute('data-sidebar-size');
     if (document.documentElement.clientWidth >= 767) {
       if (currentSIdebarSize == null) {
-        (document.documentElement.getAttribute('data-sidebar-size') == null || document.documentElement.getAttribute('data-sidebar-size') == "lg") ? document.documentElement.setAttribute('data-sidebar-size', 'sm') : document.documentElement.setAttribute('data-sidebar-size', 'lg')
-      } else if (currentSIdebarSize == "md") {
-        (document.documentElement.getAttribute('data-sidebar-size') == "md") ? document.documentElement.setAttribute('data-sidebar-size', 'sm') : document.documentElement.setAttribute('data-sidebar-size', 'md')
+        document.documentElement.getAttribute('data-sidebar-size') == null ||
+        document.documentElement.getAttribute('data-sidebar-size') == 'lg'
+          ? document.documentElement.setAttribute('data-sidebar-size', 'sm')
+          : document.documentElement.setAttribute('data-sidebar-size', 'lg');
+      } else if (currentSIdebarSize == 'md') {
+        document.documentElement.getAttribute('data-sidebar-size') == 'md'
+          ? document.documentElement.setAttribute('data-sidebar-size', 'sm')
+          : document.documentElement.setAttribute('data-sidebar-size', 'md');
       } else {
-        (document.documentElement.getAttribute('data-sidebar-size') == "sm") ? document.documentElement.setAttribute('data-sidebar-size', 'lg') : document.documentElement.setAttribute('data-sidebar-size', 'sm')
+        document.documentElement.getAttribute('data-sidebar-size') == 'sm'
+          ? document.documentElement.setAttribute('data-sidebar-size', 'lg')
+          : document.documentElement.setAttribute('data-sidebar-size', 'sm');
       }
     }
     // if (document.documentElement.clientWidth <= 767) {
@@ -72,13 +76,12 @@ export class VerticalComponent implements OnInit {
     const rightBar = document.getElementById('theme-settings-offcanvas');
     if (rightBar != null) {
       rightBar.classList.toggle('show');
-      rightBar.setAttribute('style', "visibility: visible;");
-
+      rightBar.setAttribute('style', 'visibility: visible;');
     }
   }
 
   onResize(event: any) {
-    if (document.body.getAttribute('layout') == "twocolumn") {
+    if (document.body.getAttribute('layout') == 'twocolumn') {
       if (event.target.innerWidth <= 767) {
         this.eventService.broadcast('changeLayout', 'vertical');
       } else {
@@ -88,5 +91,4 @@ export class VerticalComponent implements OnInit {
       }
     }
   }
-
 }

@@ -6,12 +6,7 @@ import { ExtrapagesRoutingModule } from './extraspages-routing.module';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
 
 @NgModule({
-  declarations: [
-    MaintenanceComponent,
-  ],
-  imports: [
-    CommonModule,
-    ExtrapagesRoutingModule
-  ]
+  declarations: [MaintenanceComponent],
+  imports: [CommonModule, ExtrapagesRoutingModule],
 })
-export class ExtraspagesModule { }
+export class ExtraspagesModule {}

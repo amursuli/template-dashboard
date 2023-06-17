@@ -24,7 +24,6 @@ import { ContactComponent } from './landing/index/contact/contact.component';
 import { FooterComponent } from './landing/index/footer/footer.component';
 import { ScrollspyDirective } from './scrollspy.directive';
 
-
 @NgModule({
   declarations: [
     BreadcrumbsComponent,
@@ -43,15 +42,9 @@ import { ScrollspyDirective } from './scrollspy.directive';
     FooterComponent,
     ScrollspyDirective,
   ],
-  imports: [
-    CommonModule,
-    NgbNavModule,
-    NgbAccordionModule,
-    NgbDropdownModule,
-    NgxUsefulSwiperModule ,
-    CountToModule
-  ],
-  exports: [BreadcrumbsComponent,
+  imports: [CommonModule, NgbNavModule, NgbAccordionModule, NgbDropdownModule, NgxUsefulSwiperModule, CountToModule],
+  exports: [
+    BreadcrumbsComponent,
     ClientLogoComponent,
     ServicesComponent,
     CollectionComponent,
@@ -65,7 +58,7 @@ import { ScrollspyDirective } from './scrollspy.directive';
     TeamComponent,
     ContactComponent,
     FooterComponent,
-    ScrollspyDirective
-  ]
+    ScrollspyDirective,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

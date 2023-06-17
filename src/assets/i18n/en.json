@@ -18,7 +18,7 @@
         "CRYPTO": "Crypto",
         "PROJECTS": "Projects",
         "NFT": "NFT",
-        "JOB":"Job"
+        "JOB": "Job"
       }
     },
     "APPS": {
@@ -78,17 +78,17 @@
         "CREATENFT": "Create NFT",
         "FILEMANAGER": "File Manager",
         "TODO": "To Do",
-        "JOBS":"Jobs",
-        "STATISTICS":"Statistics",
-        "JOBLISTS":"Job Lists",
-        "GRID":"Grid",
-        "CANDIDATELISTS":"Candidate Lists",
-        "GRIDVIEW":"Grid View",
-        "APPLICATION":"Application",
-        "NEWJOB":"New Job",
-        "COMPANIESLIST":"Companies List",
-        "JOBCATEGORIES":"Job Categories",
-        "APIKEY":"API Key"
+        "JOBS": "Jobs",
+        "STATISTICS": "Statistics",
+        "JOBLISTS": "Job Lists",
+        "GRID": "Grid",
+        "CANDIDATELISTS": "Candidate Lists",
+        "GRIDVIEW": "Grid View",
+        "APPLICATION": "Application",
+        "NEWJOB": "New Job",
+        "COMPANIESLIST": "Companies List",
+        "JOBCATEGORIES": "Job Categories",
+        "APIKEY": "API Key"
       }
     },
     "LAYOUTS": {
@@ -140,8 +140,8 @@
         "COMINGSOON": "Coming Soon",
         "SITEMAP": "Sitemap",
         "SEARCHRESULTS": "Search Results",
-        "PRIVACYPOLICY":"Privacy Policy",
-        "TERMS&CONDITIONS":"Term & Conditions"
+        "PRIVACYPOLICY": "Privacy Policy",
+        "TERMS&CONDITIONS": "Term & Conditions"
       }
     },
     "LANDING": {
@@ -149,7 +149,7 @@
       "LIST": {
         "ONEPAGE": "One Page",
         "NFTLANDING": "NFT Landing",
-        "JOB":"Job"
+        "JOB": "Job"
       }
     },
     "COMPONENTS": {

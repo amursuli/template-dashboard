@@ -4,22 +4,20 @@ import { EventService } from '../../core/services/event.service';
 @Component({
   selector: 'app-two-column',
   templateUrl: './two-column.component.html',
-  styleUrls: ['./two-column.component.scss']
+  styleUrls: ['./two-column.component.scss'],
 })
 
 /**
  * TwoColumnComponent
  */
 export class TwoColumnComponent implements OnInit {
-
-  constructor(private eventService: EventService) { }
+  constructor(private eventService: EventService) {}
   isCondensed = false;
 
   ngOnInit(): void {
     if (document.documentElement.clientWidth <= 767) {
       document.documentElement.setAttribute('data-layout', 'vertical');
-    }
-    else {
+    } else {
       document.documentElement.setAttribute('data-layout', 'twocolumn');
     }
     document.body.classList.add('twocolumn-panel');
@@ -33,7 +31,7 @@ export class TwoColumnComponent implements OnInit {
     document.documentElement.setAttribute('data-preloader', 'disable');
 
     window.addEventListener('resize', function () {
-      if (document.documentElement.getAttribute('data-layout') == "twocolumn") {
+      if (document.documentElement.getAttribute('data-layout') == 'twocolumn') {
         if (document.documentElement.clientWidth <= 767) {
           document.documentElement.setAttribute('data-layout', 'vertical');
           document.getElementById('side-bar')?.classList.remove('d-none');
@@ -42,7 +40,7 @@ export class TwoColumnComponent implements OnInit {
           document.getElementById('side-bar')?.classList.add('d-none');
         }
       }
-    })
+    });
   }
 
   /**
@@ -64,12 +62,12 @@ export class TwoColumnComponent implements OnInit {
     const rightBar = document.getElementById('theme-settings-offcanvas');
     if (rightBar != null) {
       rightBar.classList.toggle('show');
-      rightBar.setAttribute('style', "visibility: visible;");
+      rightBar.setAttribute('style', 'visibility: visible;');
     }
   }
 
   onResize(event: any) {
-    if (document.body.getAttribute('layout') == "twocolumn") {
+    if (document.body.getAttribute('layout') == 'twocolumn') {
       if (event.target.innerWidth <= 767) {
         this.eventService.broadcast('changeLayout', 'vertical');
         document.querySelector('.hamburger-icon')?.classList.remove('open');
@@ -84,11 +82,9 @@ export class TwoColumnComponent implements OnInit {
 
   isTwoColumnLayoutRequested() {
     return 'twocolumn' === document.documentElement.getAttribute('data-layout');
-
   }
 
   issemiboxLayoutRequested() {
     return 'semibox' === document.documentElement.getAttribute('data-layout');
   }
-
 }

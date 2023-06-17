@@ -21,17 +21,14 @@ import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
 // Pages Routing
-import { PagesRoutingModule } from "./pages-routing.module";
-import { SharedModule } from "../shared/shared.module";
+import { PagesRoutingModule } from './pages-routing.module';
+import { SharedModule } from '../shared/shared.module';
 import { WidgetModule } from '../shared/widget/widget.module';
 import { DashboardComponent } from './dashboards/dashboard/dashboard.component';
-import { DashboardsModule } from "./dashboards/dashboards.module";
+import { DashboardsModule } from './dashboards/dashboards.module';
 
 @NgModule({
-  declarations: [
-    DashboardComponent,
-    ToastsContainer
-  ],
+  declarations: [DashboardComponent, ToastsContainer],
   imports: [
     CommonModule,
     FormsModule,
@@ -44,13 +41,13 @@ import { DashboardsModule } from "./dashboards/dashboards.module";
     PagesRoutingModule,
     SharedModule,
     WidgetModule,
-    NgxUsefulSwiperModule ,
+    NgxUsefulSwiperModule,
     LightboxModule,
     DashboardsModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class PagesModule { 
+export class PagesModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }

@@ -12,14 +12,13 @@ import { swiper, gallery, news, video } from './data';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.scss']
+  styleUrls: ['./search-results.component.scss'],
 })
 
 /**
  * SearchResults Component
  */
 export class SearchResultsComponent implements OnInit {
-
   // bread crumb items
   breadCrumbItems!: Array<{}>;
   swiper!: swiperModel[];
@@ -31,13 +30,13 @@ export class SearchResultsComponent implements OnInit {
 
   constructor(private lightbox: Lightbox) {
     for (let i = 1; i <= 5; i++) {
-      const src = 'assets/images/small/img-'+i+'.jpg';
+      const src = 'assets/images/small/img-' + i + '.jpg';
       const caption = 'Image ' + i + ' caption here';
       const thumb = '../../../../assets/images/small/img-' + i + '-thumb.jpg';
       const item = {
         src: src,
         caption: caption,
-        thumb: thumb
+        thumb: thumb,
       };
       this.images.push(item);
     }
@@ -45,12 +44,9 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnInit(): void {
     /**
-    * BreadCrumb
-    */
-     this.breadCrumbItems = [
-      { label: 'Pages' },
-      { label: 'Search Results', active: true }
-    ];
+     * BreadCrumb
+     */
+    this.breadCrumbItems = [{ label: 'Pages' }, { label: 'Search Results', active: true }];
 
     // Chat Data Get Function
     this._fetchData();
@@ -64,10 +60,9 @@ export class SearchResultsComponent implements OnInit {
     this.video = video;
   }
 
-
   open(index: number): void {
     // open lightbox
-    this.lightbox.open(this.images, index, { });
+    this.lightbox.open(this.images, index, {});
   }
 
   /**
@@ -76,18 +71,17 @@ export class SearchResultsComponent implements OnInit {
   public Vertical: SwiperOptions = {
     pagination: true,
     mousewheel: true,
-    spaceBetween:10,
-    breakpoints:{
-      768:{
-        slidesPerView: 2, 
+    spaceBetween: 10,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
       },
-      1200:{
-        slidesPerView: 5, 
+      1200: {
+        slidesPerView: 5,
       },
-      1600:{
-        slidesPerView: 9, 
-      }
-    }
-    };
-
+      1600: {
+        slidesPerView: 9,
+      },
+    },
+  };
 }

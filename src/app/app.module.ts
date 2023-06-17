@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { LayoutsModule} from "./layouts/layouts.module";
-import { PagesModule } from "./pages/pages.module";
+import { LayoutsModule } from './layouts/layouts.module';
+import { PagesModule } from './pages/pages.module';
 
 // Auth
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { initFirebaseBackend } from './authUtils';
@@ -30,30 +30,28 @@ if (environment.defaultauth === 'firebase') {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
-        deps: [HttpClient]
-      }
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
     }),
     BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     LayoutsModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: FakeBackendInterceptor, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

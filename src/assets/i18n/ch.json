@@ -18,7 +18,7 @@
         "CRYPTO": "加密货币",
         "PROJECTS": "项目",
         "NFT": "NFT",
-        "JOB":"工作"
+        "JOB": "工作"
       }
     },
     "APPS": {
@@ -78,17 +78,17 @@
         "CREATENFT": "創建 NFT",
         "FILEMANAGER": "文件管理器",
         "TODO": "去做",
-        "JOBS":"工作",
-        "STATISTICS":"统计数据",
-        "JOBLISTS":"职位列表",
-        "GRID":"网格",
-        "CANDIDATELISTS":"候选人名单",
-        "GRIDVIEW":"网格视图",
-        "APPLICATION":"应用",
-        "NEWJOB":"新工作",
-        "COMPANIESLIST":"公司名单",
-        "JOBCATEGORIES":"职位类别",
-        "APIKEY":"API密钥"
+        "JOBS": "工作",
+        "STATISTICS": "统计数据",
+        "JOBLISTS": "职位列表",
+        "GRID": "网格",
+        "CANDIDATELISTS": "候选人名单",
+        "GRIDVIEW": "网格视图",
+        "APPLICATION": "应用",
+        "NEWJOB": "新工作",
+        "COMPANIESLIST": "公司名单",
+        "JOBCATEGORIES": "职位类别",
+        "APIKEY": "API密钥"
       }
     },
     "LAYOUTS": {
@@ -140,8 +140,8 @@
         "COMINGSOON": "快来了",
         "SITEMAP": "网站地图",
         "SEARCHRESULTS": "搜索结果",
-        "PRIVACYPOLICY":"隐私政策",
-        "TERMS&CONDITIONS":"条款和条件"
+        "PRIVACYPOLICY": "隐私政策",
+        "TERMS&CONDITIONS": "条款和条件"
       }
     },
     "LANDING": {
@@ -149,7 +149,7 @@
       "LIST": {
         "ONEPAGE": "一页",
         "NFTLANDING": "NFT 登陆",
-        "JOB":"工作"
+        "JOB": "工作"
       }
     },
     "COMPONENTS": {

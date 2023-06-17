@@ -4,7 +4,7 @@ export const MENU: MenuItem[] = [
   {
     id: 1,
     label: 'MENUITEMS.MENU.TEXT',
-    isTitle: true
+    isTitle: true,
   },
   {
     id: 2,
@@ -16,8 +16,8 @@ export const MENU: MenuItem[] = [
         id: 3,
         label: 'Dashboard',
         link: '',
-        parentId: 2
-      }
-    ]
-  }
+        parentId: 2,
+      },
+    ],
+  },
 ];

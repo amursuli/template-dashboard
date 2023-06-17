@@ -8,26 +8,17 @@ import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
 // Component
-import { PassResetRoutingModule } from "./pass-reset-routing.module";
+import { PassResetRoutingModule } from './pass-reset-routing.module';
 import { BasicComponent } from './basic/basic.component';
 import { CoverComponent } from './cover/cover.component';
 
 @NgModule({
-  declarations: [
-    BasicComponent,
-    CoverComponent
-  ],
-  imports: [
-    CommonModule,
-    NgbCarouselModule,
-    ReactiveFormsModule,
-    FormsModule,
-    PassResetRoutingModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [BasicComponent, CoverComponent],
+  imports: [CommonModule, NgbCarouselModule, ReactiveFormsModule, FormsModule, PassResetRoutingModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PassResetModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }
- }
+}

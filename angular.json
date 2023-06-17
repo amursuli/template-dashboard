@@ -29,10 +29,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "node_modules/shepherd.js/dist/css/shepherd.css",
               "node_modules/flatpickr/dist/flatpickr.css",
@@ -43,9 +40,7 @@
               "src/assets/scss/config/material/app.scss",
               "src/assets/scss/icons.scss"
             ],
-            "scripts":
-            [
-            ],
+            "scripts": [],
             "allowedCommonJsDependencies": [
               "ev-emitter/ev-emitter",
               "can-use-dom",
@@ -91,7 +86,7 @@
               "core-js/modules/es.string.replace.js",
               "core-js/modules/es.weak-map.js",
               "core-js/modules/web.dom-collections.iterator.js"
-           ]
+            ]
           },
           "configurations": {
             "production": {
@@ -117,10 +112,10 @@
               "optimization": {
                 "scripts": true,
                 "styles": {
-                    "minify": true,
-                    "inlineCritical": false
+                  "minify": true,
+                  "inlineCritical": false
                 }
-            }
+              }
             },
             "development": {
               "buildOptimizer": false,
@@ -159,13 +154,8 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         }

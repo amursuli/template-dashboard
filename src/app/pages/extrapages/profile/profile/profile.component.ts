@@ -11,33 +11,31 @@ import { projectListModel, documentModel } from './profile.model';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss'],
 })
 
 /**
  * Profile Component
  */
 export class ProfileComponent implements OnInit {
-
   projectList!: projectListModel[];
   document!: documentModel[];
-  userData:any;
+  userData: any;
 
-
-  constructor(private TokenStorageService : TokenStorageService) { }
+  constructor(private TokenStorageService: TokenStorageService) {}
 
   ngOnInit(): void {
-    this.userData =  this.TokenStorageService.getUser(); 
+    this.userData = this.TokenStorageService.getUser();
     /**
      * Fetches the data
      */
-     this.fetchData();
+    this.fetchData();
   }
 
   /**
    * Fetches the data
    */
-   private fetchData() {
+  private fetchData() {
     this.projectList = projectList;
     this.document = document;
   }
@@ -45,18 +43,17 @@ export class ProfileComponent implements OnInit {
   /**
    * Swiper setting
    */
-   config = {
+  config = {
     slidesPerView: 1,
     initialSlide: 0,
     spaceBetween: 25,
-    breakpoints:{
-      768:{
-        slidesPerView: 2, 
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
       },
-      1200:{
-        slidesPerView: 3, 
-      }
-    }
+      1200: {
+        slidesPerView: 3,
+      },
+    },
   };
-
 }

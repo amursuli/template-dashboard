@@ -14,7 +14,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
-// Ng Search 
+// Ng Search
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 // Component pages
@@ -26,12 +26,7 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
-  declarations: [
-    ProfileComponent,
-    SettingsComponent,
-    FaqsComponent,
-    SearchResultsComponent,
-  ],
+  declarations: [ProfileComponent, SettingsComponent, FaqsComponent, SearchResultsComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -45,11 +40,11 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     FlatpickrModule,
     ExtraPagesRoutingModule,
     SharedModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class ExtraspagesModule { 
+export class ExtraspagesModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }

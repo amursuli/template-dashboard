@@ -13,20 +13,11 @@ import { BasicComponent } from './basic/basic.component';
 import { CoverComponent } from './cover/cover.component';
 
 @NgModule({
-  declarations: [
-    BasicComponent,
-    CoverComponent
-  ],
-  imports: [
-    CommonModule,
-    NgbCarouselModule,
-    ReactiveFormsModule,
-    FormsModule,
-    LogoutRoutingModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [BasicComponent, CoverComponent],
+  imports: [CommonModule, NgbCarouselModule, ReactiveFormsModule, FormsModule, LogoutRoutingModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class LogoutModule { 
+export class LogoutModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }

@@ -12,14 +12,13 @@ import { ToastService } from './toast-service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 
 /**
  * Login Component
  */
 export class LoginComponent implements OnInit {
-
   // Login Form
   loginForm!: UntypedFormGroup;
   submitted = false;
@@ -29,22 +28,28 @@ export class LoginComponent implements OnInit {
   // set the current year
   year: number = new Date().getFullYear();
 
-  constructor(private formBuilder: UntypedFormBuilder,private authenticationService: AuthenticationService,private router: Router,
-    private authFackservice: AuthfakeauthenticationService,private route: ActivatedRoute, public toastService: ToastService) {
-      // redirect to home if already logged in
-      if (this.authenticationService.currentUserValue) {
-        this.router.navigate(['/']);
-      }
-     }
+  constructor(
+    private formBuilder: UntypedFormBuilder,
+    private authenticationService: AuthenticationService,
+    private router: Router,
+    private authFackservice: AuthfakeauthenticationService,
+    private route: ActivatedRoute,
+    public toastService: ToastService
+  ) {
+    // redirect to home if already logged in
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
-    if(localStorage.getItem('currentUser')) {
+    if (localStorage.getItem('currentUser')) {
       this.router.navigate(['/']);
     }
     /**
      * Form Validatyion
      */
-     this.loginForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: ['admin@themesbrand.com', [Validators.required, Validators.email]],
       password: ['123456', [Validators.required]],
     });
@@ -53,21 +58,23 @@ export class LoginComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.loginForm.controls; }
+  get f() {
+    return this.loginForm.controls;
+  }
 
   /**
    * Form submit
    */
-   onSubmit() {
+  onSubmit() {
     this.submitted = true;
-     // Login Api
-     this.authenticationService.login(this.f['email'].value, this.f['password'].value).subscribe((data:any) => {      
-      if(data.status == 'success'){
+    // Login Api
+    this.authenticationService.login(this.f['email'].value, this.f['password'].value).subscribe((data: any) => {
+      if (data.status == 'success') {
         localStorage.setItem('toast', 'true');
         localStorage.setItem('currentUser', JSON.stringify(data.data));
         localStorage.setItem('token', data.token);
         this.router.navigate(['/']);
-      } else{
+      } else {
         this.toastService.show(data.data, { classname: 'bg-danger text-white', delay: 15000 });
       }
     });
@@ -97,8 +104,7 @@ export class LoginComponent implements OnInit {
   /**
    * Password Hide/Show
    */
-   toggleFieldTextType() {
+  toggleFieldTextType() {
     this.fieldTextType = !this.fieldTextType;
   }
-
 }

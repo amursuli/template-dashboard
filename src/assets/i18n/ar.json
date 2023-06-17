@@ -18,7 +18,7 @@
         "CRYPTO": "تشفير",
         "PROJECTS": "المشاريع",
         "NFT": "NFT",
-        "JOB":"مهنة"
+        "JOB": "مهنة"
       }
     },
     "APPS": {
@@ -78,17 +78,17 @@
         "CREATENFT": "إنشاء NFT",
         "FILEMANAGER": "مدير الملفات",
         "TODO": "لكى يفعل",
-        "JOBS":"وظائف",
-        "STATISTICS":"إحصائيات",
-        "JOBLISTS":"قوائم الوظائف",
-        "GRID":"جريد",
-        "CANDIDATELISTS":"قائمة المرشحين",
-        "GRIDVIEW":"عرض شبكي",
-        "APPLICATION":"طلب",
-        "NEWJOB":"وظيفة جديدة",
-        "COMPANIESLIST":"قائمة الشركات",
-        "JOBCATEGORIES":"فئات الوظائف",
-        "APIKEY":"مفتاح API"
+        "JOBS": "وظائف",
+        "STATISTICS": "إحصائيات",
+        "JOBLISTS": "قوائم الوظائف",
+        "GRID": "جريد",
+        "CANDIDATELISTS": "قائمة المرشحين",
+        "GRIDVIEW": "عرض شبكي",
+        "APPLICATION": "طلب",
+        "NEWJOB": "وظيفة جديدة",
+        "COMPANIESLIST": "قائمة الشركات",
+        "JOBCATEGORIES": "فئات الوظائف",
+        "APIKEY": "مفتاح API"
       }
     },
     "LAYOUTS": {
@@ -140,8 +140,8 @@
         "COMINGSOON": "قريبا",
         "SITEMAP": "خريطة الموقع",
         "SEARCHRESULTS": "نتائج البحث",
-        "PRIVACYPOLICY":"سياسة الخصوصية",
-        "TERMS&CONDITIONS":"الشروط والأحكام"
+        "PRIVACYPOLICY": "سياسة الخصوصية",
+        "TERMS&CONDITIONS": "الشروط والأحكام"
       }
     },
     "LANDING": {
@@ -149,7 +149,7 @@
       "LIST": {
         "ONEPAGE": "صفحة واحدة",
         "NFTLANDING": "NFT الهبوط",
-        "JOB":"مهنة"
+        "JOB": "مهنة"
       }
     },
     "COMPONENTS": {

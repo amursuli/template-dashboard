@@ -5,25 +5,23 @@ import { TokenStorageService } from '../../../../core/services/token-storage.ser
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  styleUrls: ['./settings.component.scss'],
 })
 
 /**
  * Profile Settings Component
  */
 export class SettingsComponent implements OnInit {
+  userData: any;
 
-  userData:any;
-
-  constructor(private TokenStorageService : TokenStorageService) { }
+  constructor(private TokenStorageService: TokenStorageService) {}
 
   ngOnInit(): void {
-    this.userData =  this.TokenStorageService.getUser(); 
+    this.userData = this.TokenStorageService.getUser();
   }
 
   /**
-  * Multiple Default Select2
-  */
-   selectValue = ['Illustrator', 'Photoshop', 'CSS', 'HTML', 'Javascript', 'Python', 'PHP'];
-
+   * Multiple Default Select2
+   */
+  selectValue = ['Illustrator', 'Photoshop', 'CSS', 'HTML', 'Javascript', 'Python', 'PHP'];
 }

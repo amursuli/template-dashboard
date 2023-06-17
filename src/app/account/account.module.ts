@@ -12,28 +12,17 @@ import { defineElement } from 'lord-icon-element';
 import lottie from 'lottie-web';
 
 import { AccountRoutingModule } from './account-routing.module';
-import { SigninModule } from "./auth/signin/signin.module";
-import { SignupModule } from "./auth/signup/signup.module";
+import { SigninModule } from './auth/signin/signin.module';
+import { SignupModule } from './auth/signup/signup.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [
-    RegisterComponent,
-    LoginComponent,
-    ToastsContainer
-  ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AccountRoutingModule,
-    SigninModule,
-    NgbToastModule
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  declarations: [RegisterComponent, LoginComponent, ToastsContainer],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, AccountRoutingModule, SigninModule, NgbToastModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AccountModule { 
+export class AccountModule {
   constructor() {
     defineElement(lottie.loadAnimation);
   }

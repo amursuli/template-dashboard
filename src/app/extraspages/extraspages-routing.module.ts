@@ -2,18 +2,17 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Component Pages
-import { MaintenanceComponent } from "./maintenance/maintenance.component";
+import { MaintenanceComponent } from './maintenance/maintenance.component';
 
 const routes: Routes = [
   {
-    path: "maintenance",
-    component:MaintenanceComponent
-  }
+    path: 'maintenance',
+    component: MaintenanceComponent,
+  },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-
-export class ExtrapagesRoutingModule { }
+export class ExtrapagesRoutingModule {}

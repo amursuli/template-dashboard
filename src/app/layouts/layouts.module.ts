@@ -18,7 +18,6 @@ import { HorizontalTopbarComponent } from './horizontal-topbar/horizontal-topbar
 import { TwoColumnComponent } from './two-column/two-column.component';
 import { TwoColumnSidebarComponent } from './two-column-sidebar/two-column-sidebar.component';
 
-
 @NgModule({
   declarations: [
     LayoutComponent,
@@ -29,16 +28,9 @@ import { TwoColumnSidebarComponent } from './two-column-sidebar/two-column-sideb
     HorizontalComponent,
     HorizontalTopbarComponent,
     TwoColumnComponent,
-    TwoColumnSidebarComponent
+    TwoColumnSidebarComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgbDropdownModule,
-    NgbNavModule,
-    SimplebarAngularModule,
-    TranslateModule,
-  ],
-  providers: [LanguageService]
+  imports: [CommonModule, RouterModule, NgbDropdownModule, NgbNavModule, SimplebarAngularModule, TranslateModule],
+  providers: [LanguageService],
 })
-export class LayoutsModule { }
+export class LayoutsModule {}

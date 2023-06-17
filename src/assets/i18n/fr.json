@@ -18,7 +18,7 @@
         "CRYPTO": "Crypto",
         "PROJECTS": "Projets",
         "NFT": "NFT",
-        "JOB":"TRAVAIL"
+        "JOB": "TRAVAIL"
       }
     },
     "APPS": {
@@ -78,17 +78,17 @@
         "CREATENFT": "Créer NFT",
         "FILEMANAGER": "Gestionnaire de fichiers",
         "TODO": "Faire",
-        "JOBS":"Travaux",
-        "STATISTICS":"Statistiques",
-        "JOBLISTS":"Listes de tâches",
-        "GRID":"Grille",
-        "CANDIDATELISTS":"Liste des candidats",
-        "GRIDVIEW":"Vue Grille",
-        "APPLICATION":"Application",
-        "NEWJOB":"Nouveau travail",
-        "COMPANIESLIST":"Liste des entreprises",
-        "JOBCATEGORIES":"Catégories d'emploi",
-        "APIKEY":"Clé API"
+        "JOBS": "Travaux",
+        "STATISTICS": "Statistiques",
+        "JOBLISTS": "Listes de tâches",
+        "GRID": "Grille",
+        "CANDIDATELISTS": "Liste des candidats",
+        "GRIDVIEW": "Vue Grille",
+        "APPLICATION": "Application",
+        "NEWJOB": "Nouveau travail",
+        "COMPANIESLIST": "Liste des entreprises",
+        "JOBCATEGORIES": "Catégories d'emploi",
+        "APIKEY": "Clé API"
       }
     },
     "LAYOUTS": {
@@ -140,8 +140,8 @@
         "COMINGSOON": "À venir",
         "SITEMAP": "Plan du site",
         "SEARCHRESULTS": "Résultats de recherche",
-        "PRIVACYPOLICY":"Politique de confidentialité",
-        "TERMS&CONDITIONS":"Conditions générales"
+        "PRIVACYPOLICY": "Politique de confidentialité",
+        "TERMS&CONDITIONS": "Conditions générales"
       }
     },
     "LANDING": {
@@ -149,7 +149,7 @@
       "LIST": {
         "ONEPAGE": "Une page",
         "NFTLANDING": "Atterrissage NFT",
-        "JOB":"TRAVAIL"
+        "JOB": "TRAVAIL"
       }
     },
     "COMPONENTS": {
