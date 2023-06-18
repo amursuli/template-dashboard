@@ -20,7 +20,7 @@
       </span>
     </a>
     <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-      <i class="ri-record-circle-line"></i>
+      <em class="ri-record-circle-line"></em>
     </button>
   </div>
 
@@ -42,7 +42,7 @@
               data-bs-toggle="collapse"
               aria-expanded="false"
               (click)="toggleItem($event)">
-              <i class="{{ item.icon }} icon nav-icon" class=""></i>
+              <em class="{{ item.icon }} icon nav-icon" class=""></em>
               <span class=""> {{ item.label   }}</span>
               <span class="badge badge-pill {{ item.badge.variant }}" *ngIf="item.badge">{{
                 item.badge.text  
@@ -50,7 +50,7 @@
             </a>
 
             <a [routerLink]="item.link" *ngIf="!hasItems(item)" class="side-nav-link-ref nav-link menu-link">
-              <i class="bx {{ item.icon }} icon nav-icon" *ngIf="item.icon" class=""></i>
+              <em class="bx {{ item.icon }} icon nav-icon" *ngIf="item.icon" class=""></em>
               <span class=""> {{ item.label   }}</span>
               <span class="badge {{ item.badge.variant }} float-end" *ngIf="item.badge">{{
                 item.badge.text  
@@ -65,7 +65,7 @@
                     class="nav-link"
                     [attr.data-parent]="subitem.parentId"
                     (click)="updateActive($event)">
-                    <i class="bx {{ subitem.icon }} icon nav-icon" *ngIf="subitem.icon" class=""></i
+                    <em class="bx {{ subitem.icon }} icon nav-icon" *ngIf="subitem.icon" class=""></em
                     >{{ subitem.label   }}
                   </a>
                   <a
@@ -76,7 +76,7 @@
                     data-bs-toggle="collapse"
                     aria-expanded="false"
                     (click)="toggleSubItem($event)">
-                    <i class="bx {{ subitem.icon }} icon nav-icon" *ngIf="subitem.icon" class=""></i
+                    <em class="bx {{ subitem.icon }} icon nav-icon" *ngIf="subitem.icon" class=""></em
                     >{{ subitem.label   }}
                   </a>
                   <div class="collapse menu-dropdown" *ngIf="hasItems(subitem)">

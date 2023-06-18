@@ -21,7 +21,7 @@
       </span>
     </a>
     <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
-      <i class="ri-record-circle-line"></i>
+      <em class="ri-record-circle-line"></em>
     </button>
   </div>
 
@@ -45,7 +45,7 @@
                           [attr.subitems]="item.collapseid"
                           class="nav-icon"
                           (click)="toggleItem($event)">
-                          <i class="{{ item.icon }}" class=""></i>
+                          <em class="{{ item.icon }}" class=""></em>
                           <span data-key="t-dashboards" class="d-none">{{ item.label }}</span>
                         </a>
                         <a
@@ -54,7 +54,7 @@
                           [attr.subitems]="item.collapseid"
                           class="nav-icon"
                           (click)="toggleParentItem($event)">
-                          <i class="{{ item.icon }}" class=""></i>
+                          <em class="{{ item.icon }}" class=""></em>
                           <span data-key="t-widget" class="d-none">{{ item.label }}</span>
                         </a>
                       </li>

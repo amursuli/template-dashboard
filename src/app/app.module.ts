@@ -6,7 +6,7 @@ import { LayoutsModule } from './layouts/layouts.module';
 import { PagesModule } from './pages/pages.module';
 
 // Auth
-import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 import { initFirebaseBackend } from './authUtils';

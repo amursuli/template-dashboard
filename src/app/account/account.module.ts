@@ -13,7 +13,6 @@ import lottie from 'lottie-web';
 
 import { AccountRoutingModule } from './account-routing.module';
 import { SigninModule } from './auth/signin/signin.module';
-import { SignupModule } from './auth/signup/signup.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 

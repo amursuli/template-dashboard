@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-basic',
@@ -9,11 +9,7 @@ import { Component, OnInit } from '@angular/core';
 /**
  * Logout Basic Component
  */
-export class BasicComponent implements OnInit {
+export class BasicComponent {
   // set the current year
   year: number = new Date().getFullYear();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

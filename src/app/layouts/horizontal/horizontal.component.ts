@@ -10,8 +10,6 @@ import { Component, OnInit } from '@angular/core';
  * Horizontal Component
  */
 export class HorizontalComponent implements OnInit {
-  constructor() {}
-
   ngOnInit(): void {
     document.documentElement.setAttribute('data-layout', 'horizontal');
     document.documentElement.setAttribute('data-topbar', 'light');

@@ -61,7 +61,6 @@ export class VerticalComponent implements OnInit {
           : document.documentElement.setAttribute('data-sidebar-size', 'sm');
       }
     }
-    // if (document.documentElement.clientWidth <= 767) {
     if (document.documentElement.clientWidth <= 767) {
       document.body.classList.toggle('vertical-sidebar-enable');
     }

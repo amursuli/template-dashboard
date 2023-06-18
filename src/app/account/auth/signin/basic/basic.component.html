@@ -50,7 +50,7 @@
                       placeholder="Enter username"
                       formControlName="name"
                       [ngClass]="{ 'is-invalid': submitted && f['name'].errors }" />
-                    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback" align="left">
+                    <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">
                       <div *ngIf="f['name'].errors['required']">Username is required</div>
                     </div>
                   </div>
@@ -72,10 +72,10 @@
                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted shadow-none password-input"
                         type="button"
                         id="password-addon">
-                        <i
+                        <em
                           class="mdi align-middle"
                           [ngClass]="{ 'mdi-eye-off-outline': !fieldTextType, 'mdi-eye-outline': fieldTextType }"
-                          (click)="toggleFieldTextType()"></i>
+                          (click)="toggleFieldTextType()"></em>
                       </button>
                       <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                         <span *ngIf="f['password'].errors['required']">Password is required</span>
@@ -98,16 +98,16 @@
                     </div>
                     <div class="d-flex gap-2 justify-content-center">
                       <button type="button" class="btn btn-primary btn-icon waves-effect waves-light">
-                        <i class="ri-facebook-fill fs-16"></i>
+                        <em class="ri-facebook-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-danger btn-icon waves-effect waves-light">
-                        <i class="ri-google-fill fs-16"></i>
+                        <em class="ri-google-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-dark btn-icon waves-effect waves-light">
-                        <i class="ri-github-fill fs-16"></i>
+                        <em class="ri-github-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-info btn-icon waves-effect waves-light">
-                        <i class="ri-twitter-fill fs-16"></i>
+                        <em class="ri-twitter-fill fs-16"></em>
                       </button>
                     </div>
                   </div>
@@ -131,21 +131,5 @@
     <!-- end container -->
   </div>
   <!-- end auth page content -->
-
-  <!-- footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <p class="mb-0 text-muted">
-              &copy; {{ year }} Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- end Footer -->
 </div>
 <!-- end auth-page-wrapper -->

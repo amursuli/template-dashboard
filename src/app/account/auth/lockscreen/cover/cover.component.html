@@ -19,7 +19,7 @@
                     </div>
                     <div class="mt-auto">
                       <div class="mb-3">
-                        <i class="ri-double-quotes-l display-4 text-success"></i>
+                        <em class="ri-double-quotes-l display-4 text-success"></em>
                       </div>
 
                       <ngb-carousel [showNavigationArrows]="showNavigationArrows">
@@ -84,7 +84,7 @@
                           required
                           formControlName="password"
                           [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
-                        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback" align="left">
+                        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                           <div *ngIf="f['password'].errors['required']">Password is required</div>
                         </div>
                       </div>
@@ -126,7 +126,7 @@
         <div class="col-lg-12">
           <div class="text-center">
             <p class="mb-0">
-              &copy; {{ year }} Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
+              &copy; {{ year }} Velzon. Crafted with <em class="mdi mdi-heart text-danger"></em> by Themesbrand
             </p>
           </div>
         </div>

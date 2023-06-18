@@ -27,7 +27,7 @@ class FirebaseAuthBackend {
         .createUserWithEmailAndPassword(email, password)
         .then(
           (user: any) => {
-            var user: any = firebase.auth().currentUser;
+            user = firebase.auth().currentUser;
             resolve(user);
           },
           (error: any) => {
@@ -48,7 +48,7 @@ class FirebaseAuthBackend {
         .then(
           (user: any) => {
             // eslint-disable-next-line no-redeclare
-            var user: any = firebase.auth().currentUser;
+            user = firebase.auth().currentUser;
             resolve(user);
           },
           (error: any) => {
@@ -113,8 +113,7 @@ class FirebaseAuthBackend {
    */
   _handleError(error: any) {
     // tslint:disable-next-line: prefer-const
-    var errorMessage = error.message;
-    return errorMessage;
+    return error.message;
   }
 }
 

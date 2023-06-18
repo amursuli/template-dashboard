@@ -1,12 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
 
 // Swiper Slider
 import { TokenStorageService } from '../../../../core/services/token-storage.service';
 
 import { projectList, document } from './data';
-import { projectListModel, documentModel } from './profile.model';
+import { ProjectListModel, DocumentModel } from './profile.model';
 
 @Component({
   selector: 'app-profile',
@@ -18,14 +16,14 @@ import { projectListModel, documentModel } from './profile.model';
  * Profile Component
  */
 export class ProfileComponent implements OnInit {
-  projectList!: projectListModel[];
-  document!: documentModel[];
+  projectList!: ProjectListModel[];
+  document!: DocumentModel[];
   userData: any;
 
-  constructor(private TokenStorageService: TokenStorageService) {}
+  constructor(private tokenStorageService: TokenStorageService) {}
 
   ngOnInit(): void {
-    this.userData = this.TokenStorageService.getUser();
+    this.userData = this.tokenStorageService.getUser();
     /**
      * Fetches the data
      */

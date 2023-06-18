@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-alt',
@@ -9,8 +9,4 @@ import { Component, OnInit } from '@angular/core';
 /**
  * 404 Alt Component
  */
-export class AltComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class AltComponent {}

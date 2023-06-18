@@ -3,14 +3,12 @@ import { DOCUMENT } from '@angular/common';
 import { EventService } from '../../core/services/event.service';
 
 //Logout
-import { environment } from '../../../environments/environment';
 import { AuthenticationService } from '../../core/services/auth.service';
 import { AuthfakeauthenticationService } from '../../core/services/authfake.service';
 import { TokenStorageService } from '../../core/services/token-storage.service';
 import { Router } from '@angular/router';
 
 // Language
-import { CookieService } from 'ngx-cookie-service';
 import { CartModel } from './topbar.model';
 import { cartData } from './data';
 
@@ -40,11 +38,11 @@ export class TopbarComponent implements OnInit {
     private authService: AuthenticationService,
     private authFackservice: AuthfakeauthenticationService,
     private router: Router,
-    private TokenStorageService: TokenStorageService
+    private tokenStorageService: TokenStorageService
   ) {}
 
   ngOnInit(): void {
-    this.userData = this.TokenStorageService.getUser();
+    this.userData = this.tokenStorageService.getUser();
     this.element = document.documentElement;
 
     //  Fetch Data
@@ -141,11 +139,6 @@ export class TopbarComponent implements OnInit {
    * Logout the user
    */
   logout() {
-    // if (environment.defaultauth === 'firebase') {
-    //   this.authService.logout();
-    // } else {
-    //   this.authFackservice.logout();
-    // }
     this.authService.logout();
     this.router.navigate(['/auth/login']);
   }

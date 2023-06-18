@@ -19,7 +19,7 @@
                     </div>
                     <div class="mt-auto">
                       <div class="mb-3">
-                        <i class="ri-double-quotes-l display-4 text-success"></i>
+                        <em class="ri-double-quotes-l display-4 text-success"></em>
                       </div>
 
                       <ngb-carousel [showNavigationArrows]="showNavigationArrows">
@@ -108,10 +108,10 @@
                             class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon"
                             type="button"
                             id="password-addon">
-                            <i
+                            <em
                               class="ri-eye-fill align-middle"
                               [ngClass]="{ 'mdi-eye-off-outline': !fieldTextType, 'mdi-eye-outline': fieldTextType }"
-                              (click)="toggleFieldTextType()"></i>
+                              (click)="toggleFieldTextType()"></em>
                           </button>
                           <div class="invalid-feedback">Please enter password</div>
                         </div>
@@ -130,10 +130,10 @@
 
                       <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                         <h5 class="fs-13">Password must contain:</h5>
-                        <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                        <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                        <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                        <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                        <p id="pass-length" class="invalid fs-12 mb-2">Minimum <strong>8 characters</strong></p>
+                        <p id="pass-lower" class="invalid fs-12 mb-2">At <strong>lowercase</strong> letter (a-z)</p>
+                        <p id="pass-upper" class="invalid fs-12 mb-2">At least <strong>uppercase</strong> letter (A-Z)</p>
+                        <p id="pass-number" class="invalid fs-12 mb-0">A least <strong>number</strong> (0-9)</p>
                       </div>
 
                       <div class="mt-4">
@@ -147,16 +147,16 @@
 
                         <div class="d-flex gap-2 justify-content-center">
                           <button type="button" class="btn btn-primary btn-icon waves-effect waves-light">
-                            <i class="ri-facebook-fill fs-16"></i>
+                            <em class="ri-facebook-fill fs-16"></em>
                           </button>
                           <button type="button" class="btn btn-danger btn-icon waves-effect waves-light">
-                            <i class="ri-google-fill fs-16"></i>
+                            <em class="ri-google-fill fs-16"></em>
                           </button>
                           <button type="button" class="btn btn-dark btn-icon waves-effect waves-light">
-                            <i class="ri-github-fill fs-16"></i>
+                            <em class="ri-github-fill fs-16"></em>
                           </button>
                           <button type="button" class="btn btn-info btn-icon waves-effect waves-light">
-                            <i class="ri-twitter-fill fs-16"></i>
+                            <em class="ri-twitter-fill fs-16"></em>
                           </button>
                         </div>
                       </div>
@@ -185,20 +185,5 @@
   </div>
   <!-- end auth page content -->
 
-  <!-- footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <p class="mb-0">
-              &copy; {{ year }} Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- end Footer -->
 </div>
 <!-- end auth-page-wrapper -->

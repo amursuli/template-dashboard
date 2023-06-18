@@ -14,10 +14,10 @@ import { TokenStorageService } from '../../../../core/services/token-storage.ser
 export class SettingsComponent implements OnInit {
   userData: any;
 
-  constructor(private TokenStorageService: TokenStorageService) {}
+  constructor(private tokenStorageService: TokenStorageService) {}
 
   ngOnInit(): void {
-    this.userData = this.TokenStorageService.getUser();
+    this.userData = this.tokenStorageService.getUser();
   }
 
   /**

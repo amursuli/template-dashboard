@@ -13,7 +13,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root',
 })
-export class restApiService {
+export class RestApiService {
   constructor(private http: HttpClient) {}
 
   /**
@@ -322,7 +322,7 @@ export class restApiService {
   }
 
   /**
-   * Todo Rest Api
+   * Rest Api
    */
   // Get
   getTodoData(): Observable<any> {

@@ -73,9 +73,7 @@ export class TwoColumnComponent implements OnInit {
         document.querySelector('.hamburger-icon')?.classList.remove('open');
       } else {
         this.eventService.broadcast('changeLayout', 'twocolumn');
-        //document.body.classList.remove('twocolumn-panel');
         document.body.classList.remove('vertical-sidebar-enable');
-        //document.querySelector('.hamburger-icon')?.classList.remove('open');
       }
     }
   }

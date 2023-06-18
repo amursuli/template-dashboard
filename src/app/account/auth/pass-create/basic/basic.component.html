@@ -59,10 +59,10 @@
                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon"
                         type="button"
                         id="password-addon">
-                        <i
+                        <em
                           class="ri-eye-fill align-middle"
                           [ngClass]="{ 'mdi-eye-off-outline': !passwordField, 'mdi-eye-outline': passwordField }"
-                          (click)="togglepasswordField()"></i>
+                          (click)="togglepasswordField()"></em>
                       </button>
                       <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                         <span *ngIf="f['password'].errors['required']">Password is required</span>
@@ -87,10 +87,10 @@
                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none shadow-none text-muted password-addon"
                         type="button"
                         id="confirm-password-input">
-                        <i
+                        <em
                           class="ri-eye-fill align-middle"
                           [ngClass]="{ 'mdi-eye-off-outline': !passwordField, 'mdi-eye-outline': passwordField }"
-                          (click)="toggleconfirmField()"></i>
+                          (click)="toggleconfirmField()"></em>
                       </button>
                       <div *ngIf="submitted && f['cpassword'].errors" class="invalid-feedback">
                         <span *ngIf="f['cpassword'].errors['required']">Confirm Password is required</span>
@@ -100,10 +100,10 @@
 
                   <div id="password-contain" class="p-3 bg-light mb-2 rounded">
                     <h5 class="fs-13">Password must contain:</h5>
-                    <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
-                    <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
-                    <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
-                    <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                    <p id="pass-length" class="invalid fs-12 mb-2">Minimum <strong>8 characters</strong></p>
+                    <p id="pass-lower" class="invalid fs-12 mb-2">At <strong>lowercase</strong> letter (a-z)</p>
+                    <p id="pass-upper" class="invalid fs-12 mb-2">At least <strong>uppercase</strong> letter (A-Z)</p>
+                    <p id="pass-number" class="invalid fs-12 mb-0">A least <strong>number</strong> (0-9)</p>
                   </div>
 
                   <div class="form-check">
@@ -136,25 +136,5 @@
     <!-- end container -->
   </div>
   <!-- end auth page content -->
-
-  <!-- footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="text-center">
-            <p class="mb-0 text-muted">
-              &copy;
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- end Footer -->
 </div>
 <!-- end auth-page-wrapper -->

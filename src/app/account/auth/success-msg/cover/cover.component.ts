@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cover',
@@ -9,13 +9,9 @@ import { Component, OnInit } from '@angular/core';
 /**
  * Success Msg Cover Component
  */
-export class CoverComponent implements OnInit {
+export class CoverComponent {
   // set the current year
   year: number = new Date().getFullYear();
   // Carousel navigation arrow show
   showNavigationArrows: any;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

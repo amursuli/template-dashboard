@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
 
@@ -12,8 +12,6 @@ export class SidebarComponent implements OnInit {
   toggle: any = true;
   menuItems: MenuItem[] = [];
   @Output() mobileMenuButtonClicked = new EventEmitter();
-
-  constructor() {}
 
   ngOnInit(): void {
     // Menu Items
@@ -39,7 +37,9 @@ export class SidebarComponent implements OnInit {
         if (!item.classList.contains('active')) {
           item.setAttribute('aria-expanded', false);
         }
-        item.nextElementSibling ? item.nextElementSibling.classList.remove('show') : null;
+        if (item.nextElementSibling) {
+          item.nextElementSibling.classList.remove('show');
+        }
       }
       if (item.classList.contains('nav-link')) {
         if (item.nextElementSibling) {
@@ -132,7 +132,9 @@ export class SidebarComponent implements OnInit {
       dropDowns.forEach((node: any) => {
         node.classList.remove('show');
       });
-      isMenu ? isMenu.classList.add('show') : null;
+      if (isMenu) {
+        isMenu.classList.add('show');
+      }
       const ul = document.getElementById('navbar-nav');
       if (ul) {
         const iconItems = Array.from(ul.getElementsByTagName('a'));
@@ -176,7 +178,7 @@ export class SidebarComponent implements OnInit {
       }
       return false;
     }
-    return false;
+    return true;
   }
 
   updateActive(event: any) {
@@ -216,7 +218,7 @@ export class SidebarComponent implements OnInit {
   /**
    * Toggle the menu bar when having mobile screen
    */
-  toggleMobileMenu(event: any) {
+  toggleMobileMenu(_event) {
     let sidebarsize = document.documentElement.getAttribute('data-sidebar-size');
     if (sidebarsize == 'sm-hover-active') {
       document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');

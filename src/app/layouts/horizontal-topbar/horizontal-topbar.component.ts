@@ -1,9 +1,6 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-
-// Menu Pachage
-// import MetisMenu from 'metismenujs';
 
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
@@ -16,7 +13,6 @@ import { MenuItem } from './menu.model';
 export class HorizontalTopbarComponent implements OnInit {
   menu: any;
   menuItems: MenuItem[] = [];
-  @ViewChild('sideMenu') sideMenu!: ElementRef;
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
   constructor(private router: Router, public translate: TranslateService) {
@@ -41,7 +37,9 @@ export class HorizontalTopbarComponent implements OnInit {
         if (!item.classList.contains('active')) {
           item.setAttribute('aria-expanded', false);
         }
-        item.nextElementSibling ? item.nextElementSibling.classList.remove('show') : null;
+        if (item.nextElementSibling) {
+          item.nextElementSibling.classList.remove('show');
+        }
       }
       if (item.classList.contains('nav-link')) {
         if (item.nextElementSibling) {
@@ -73,7 +71,7 @@ export class HorizontalTopbarComponent implements OnInit {
       }
       return false;
     }
-    return false;
+    return true;
   }
 
   updateActive(event: any) {
@@ -116,7 +114,9 @@ export class HorizontalTopbarComponent implements OnInit {
       node.classList.remove('show');
     });
 
-    isMenu ? isMenu.classList.add('show') : null;
+    if (isMenu) {
+      isMenu.classList.add('show');
+    }
 
     const ul = document.getElementById('navbar-nav');
     if (ul) {

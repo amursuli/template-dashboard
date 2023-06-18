@@ -1,4 +1,4 @@
-export interface projectListModel {
+export interface ProjectListModel {
   title?: string;
   updatedTime?: string;
   badgeText?: string;
@@ -12,7 +12,7 @@ export interface projectListModel {
   cardBorderColor: string;
 }
 
-export interface documentModel {
+export interface DocumentModel {
   id: any;
   icon: string;
   iconBackgroundClass: string;

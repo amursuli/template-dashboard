@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-breadcrumbs',
@@ -9,15 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 /**
  * Bread Crumbs Component
  */
-export class BreadcrumbsComponent implements OnInit {
+export class BreadcrumbsComponent {
   @Input() title: string | undefined;
   @Input()
   breadcrumbItems!: Array<{
     active?: boolean;
     label?: string;
   }>;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

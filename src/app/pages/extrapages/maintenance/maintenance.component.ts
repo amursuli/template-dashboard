@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-maintenance',
@@ -9,11 +9,7 @@ import { Component, OnInit } from '@angular/core';
 /**
  * Maintenance Component
  */
-export class MaintenanceComponent implements OnInit {
+export class MaintenanceComponent {
   // set the current year
   year: number = new Date().getFullYear();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

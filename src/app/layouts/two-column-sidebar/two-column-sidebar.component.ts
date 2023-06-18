@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
@@ -13,8 +13,6 @@ export class TwoColumnSidebarComponent implements OnInit {
   toggle: any = true;
   menuItems: MenuItem[] = [];
   @Output() mobileMenuButtonClicked = new EventEmitter();
-
-  constructor() {}
 
   ngOnInit(): void {
     // Menu Items
@@ -95,8 +93,9 @@ export class TwoColumnSidebarComponent implements OnInit {
     dropDowns.forEach((node: any) => {
       node.classList.remove('show');
     });
-    isMenu ? isMenu.classList.add('show') : null;
-
+    if (isMenu) {
+      isMenu.classList.add('show');
+    }
     const ul = document.getElementById('two-column-menu');
     if (ul) {
       const iconItems = Array.from(ul.getElementsByTagName('a'));
@@ -117,7 +116,7 @@ export class TwoColumnSidebarComponent implements OnInit {
     dropDowns.forEach((node: any) => {
       node.classList.remove('show');
     });
-    isMenu ? isMenu.classList.add('show') : null;
+    if() ? isMenu.classList.add('show') : null;
 
     const ul = document.getElementById('two-column-menu');
     if (ul) {

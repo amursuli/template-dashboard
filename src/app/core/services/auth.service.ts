@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { getFirebaseBackend } from '../../authUtils';
 import { User } from '../models/auth.models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { GlobalComponent } from '../../global-component';
 
 const AUTH_API = GlobalComponent.AUTH_API;
@@ -95,8 +95,7 @@ export class AuthenticationService {
     return getFirebaseBackend()!
       .forgetPassword(email)
       .then((response: any) => {
-        const message = response.data;
-        return message;
+        return response.data;
       });
   }
 }

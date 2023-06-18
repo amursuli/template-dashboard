@@ -7,8 +7,6 @@ const USER_KEY = 'currentUser';
   providedIn: 'root',
 })
 export class TokenStorageService {
-  constructor() {}
-
   signOut(): void {
     window.sessionStorage.clear();
   }

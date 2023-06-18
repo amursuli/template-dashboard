@@ -12,12 +12,12 @@ import {
   NgbTypeaheadModule,
   NgbPaginationModule,
   NgbTooltipModule,
+  NgbToastModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { SimplebarAngularModule } from 'simplebar-angular';
 // Apex Chart Package
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { FlatpickrModule } from 'angularx-flatpickr';
-import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 //Module
 import { DashboardsRoutingModule } from './dashboards-routing.module';

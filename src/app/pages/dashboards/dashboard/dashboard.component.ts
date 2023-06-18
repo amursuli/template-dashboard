@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +9,6 @@ import { Component, OnInit } from '@angular/core';
 /**
  * Dashboard Component
  */
-export class DashboardComponent implements OnInit {
+export class DashboardComponent {
   date: Date = new Date();
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }

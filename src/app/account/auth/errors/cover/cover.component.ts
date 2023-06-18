@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cover',
@@ -9,8 +9,4 @@ import { Component, OnInit } from '@angular/core';
 /**
  * 404 Cover Component
  */
-export class CoverComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
-}
+export class CoverComponent {}

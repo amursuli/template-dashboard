@@ -73,10 +73,10 @@
                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted"
                         type="button"
                         id="password-addon">
-                        <i
+                        <em
                           class="mdi align-middle"
                           [ngClass]="{ 'mdi-eye-off-outline': !fieldTextType, 'mdi-eye-outline': fieldTextType }"
-                          (click)="toggleFieldTextType()"></i>
+                          (click)="toggleFieldTextType()"></em>
                       </button>
                       <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
                         <span *ngIf="f['password'].errors['required']">Password is required</span>
@@ -99,16 +99,16 @@
                     </div>
                     <div class="d-flex gap-2 justify-content-center">
                       <button type="button" class="btn btn-primary btn-icon waves-effect waves-light">
-                        <i class="ri-facebook-fill fs-16"></i>
+                        <em class="ri-facebook-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-danger btn-icon waves-effect waves-light">
-                        <i class="ri-google-fill fs-16"></i>
+                        <em class="ri-google-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-dark btn-icon waves-effect waves-light">
-                        <i class="ri-github-fill fs-16"></i>
+                        <em class="ri-github-fill fs-16"></em>
                       </button>
                       <button type="button" class="btn btn-info btn-icon waves-effect waves-light">
-                        <i class="ri-twitter-fill fs-16"></i>
+                        <em class="ri-twitter-fill fs-16"></em>
                       </button>
                     </div>
                   </div>
