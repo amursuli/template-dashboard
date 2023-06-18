@@ -11,8 +11,6 @@ import { Router } from '@angular/router';
 
 // Language
 import { CookieService } from 'ngx-cookie-service';
-import { LanguageService } from '../../core/services/language.service';
-import { TranslateService } from '@ngx-translate/core';
 import { CartModel } from './topbar.model';
 import { cartData } from './data';
 
@@ -39,9 +37,6 @@ export class TopbarComponent implements OnInit {
   constructor(
     @Inject(DOCUMENT) private document: any,
     private eventService: EventService,
-    public languageService: LanguageService,
-    public _cookiesService: CookieService,
-    public translate: TranslateService,
     private authService: AuthenticationService,
     private authFackservice: AuthfakeauthenticationService,
     private router: Router,
@@ -52,23 +47,11 @@ export class TopbarComponent implements OnInit {
     this.userData = this.TokenStorageService.getUser();
     this.element = document.documentElement;
 
-    // Cookies wise Language set
-    this.cookieValue = this._cookiesService.get('lang');
-    const val = this.listLang.filter((x) => x.lang === this.cookieValue);
-    this.countryName = val.map((element) => element.text);
-    if (val.length === 0) {
-      if (this.flagvalue === undefined) {
-        this.valueset = 'assets/images/flags/us.svg';
-      }
-    } else {
-      this.flagvalue = val.map((element) => element.flag);
-    }
-
     //  Fetch Data
     this.cartData = cartData;
     this.cart_length = this.cartData.length;
     this.cartData.forEach((item) => {
-      var item_price = item.quantity * item.price;
+      let item_price = item.quantity * item.price;
       this.total += item_price;
     });
   }
@@ -144,25 +127,15 @@ export class TopbarComponent implements OnInit {
    * Language Listing
    */
   listLang = [
-    { text: 'English', flag: 'assets/images/flags/us.svg', lang: 'en' },
-    { text: 'Española', flag: 'assets/images/flags/spain.svg', lang: 'es' },
-    { text: 'Deutsche', flag: 'assets/images/flags/germany.svg', lang: 'de' },
-    { text: 'Italiana', flag: 'assets/images/flags/italy.svg', lang: 'it' },
-    { text: 'русский', flag: 'assets/images/flags/russia.svg', lang: 'ru' },
-    { text: '中国人', flag: 'assets/images/flags/china.svg', lang: 'ch' },
-    { text: 'français', flag: 'assets/images/flags/french.svg', lang: 'fr' },
-    { text: 'Arabic', flag: 'assets/images/flags/ae.svg', lang: 'ar' },
+    { text: 'English', flag: '', lang: 'en' },
+    { text: 'Española', flag: '', lang: 'es' },
+    { text: 'Deutsche', flag: '', lang: 'de' },
+    { text: 'Italiana', flag: '', lang: 'it' },
+    { text: 'русский', flag: '', lang: 'ru' },
+    { text: '中国人', flag: '', lang: 'ch' },
+    { text: 'français', flag: '', lang: 'fr' },
+    { text: 'Arabic', flag: '', lang: 'ar' },
   ];
-
-  /***
-   * Language Value Set
-   */
-  setLanguage(text: string, lang: string, flag: string) {
-    this.countryName = text;
-    this.flagvalue = flag;
-    this.cookieValue = lang;
-    this.languageService.setLanguage(lang);
-  }
 
   /**
    * Logout the user
@@ -189,8 +162,8 @@ export class TopbarComponent implements OnInit {
 
   // Delete Item
   deleteItem(event: any, id: any) {
-    var price = event.target.closest('.dropdown-item').querySelector('.item_price').innerHTML;
-    var Total_price = this.total - price;
+    let price = event.target.closest('.dropdown-item').querySelector('.item_price').innerHTML;
+    let Total_price = this.total - price;
     this.total = Total_price;
     this.cart_length = this.cart_length - 1;
     this.total > 1
@@ -201,24 +174,24 @@ export class TopbarComponent implements OnInit {
 
   // Search Topbar
   Search() {
-    var searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
-    var dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
-    var input: any, filter: any, ul: any, li: any, a: any | undefined, i: any, txtValue: any;
+    const searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
+    const dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
+    let input: any, filter: any, ul: any, li: any, a: any | undefined, i: any, txtValue: any;
     input = document.getElementById('search-options') as HTMLAreaElement;
     filter = input.value.toUpperCase();
-    var inputLength = filter.length;
+    let inputLength = filter.length;
 
     if (inputLength > 0) {
       dropdown.classList.add('show');
       searchOptions.classList.remove('d-none');
-      var inputVal = input.value.toUpperCase();
-      var notifyItem = document.getElementsByClassName('notify-item');
+      let inputVal = input.value.toUpperCase();
+      let notifyItem = document.getElementsByClassName('notify-item');
 
       Array.from(notifyItem).forEach(function (element: any) {
-        var notifiTxt = '';
+        let notifiTxt = '';
         if (element.querySelector('h6')) {
-          var spantext = element.getElementsByTagName('span')[0].innerText.toLowerCase();
-          var name = element.querySelector('h6').innerText.toLowerCase();
+          let spantext = element.getElementsByTagName('span')[0].innerText.toLowerCase();
+          let name = element.querySelector('h6').innerText.toLowerCase();
           if (name.includes(inputVal)) {
             notifiTxt = name;
           } else {
@@ -239,9 +212,9 @@ export class TopbarComponent implements OnInit {
    * Search Close Btn
    */
   closeBtn() {
-    var searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
-    var dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
-    var searchInputReponsive = document.getElementById('search-options') as HTMLInputElement;
+    const searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
+    const dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
+    const searchInputReponsive = document.getElementById('search-options') as HTMLInputElement;
     dropdown.classList.remove('show');
     searchOptions.classList.add('d-none');
     searchInputReponsive.value = '';

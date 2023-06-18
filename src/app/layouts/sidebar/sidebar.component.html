@@ -36,7 +36,7 @@
         <ul class="metismenu list-unstyled navbar-nav" id="navbar-nav">
           <ng-container *ngFor="let item of menuItems">
             <li class="menu-title" *ngIf="item.isTitle">
-              <span data-key="t-menu">{{ item.label | translate }}</span>
+              <span data-key="t-menu">{{ item.label  }}</span>
             </li>
 
             <li class="nav-item" *ngIf="!item.isTitle && !item.isLayout">
@@ -49,9 +49,9 @@
                 aria-expanded="false"
                 (click)="toggleItem($event)">
                 <i class="{{ item.icon }} icon nav-icon" class=""></i>
-                <span class=""> {{ item.label | translate }}</span>
+                <span class=""> {{ item.label }}</span>
                 <span class="badge badge-pill {{ item.badge.variant }}" *ngIf="item.badge">{{
-                  item.badge.text | translate
+                  item.badge.text
                 }}</span>
               </a>
 
@@ -61,9 +61,9 @@
                 class="side-nav-link-ref nav-link menu-link"
                 (click)="toggleParentItem($event)">
                 <i class="bx {{ item.icon }} icon nav-icon" *ngIf="item.icon" class=""></i>
-                <span class=""> {{ item.label | translate }}</span>
+                <span class=""> {{ item.label }}</span>
                 <span class="badge {{ item.badge.variant }} float-end" *ngIf="item.badge">{{
-                  item.badge.text | translate
+                  item.badge.text  
                 }}</span>
               </a>
 
@@ -76,9 +76,9 @@
                       class="nav-link"
                       [attr.data-parent]="subitem.parentId"
                       (click)="updateActive($event)">
-                      {{ subitem.label | translate }}
+                      {{ subitem.label   }}
                       <span class="badge badge-pill {{ subitem.badge.variant }}" *ngIf="subitem.badge">{{
-                        subitem.badge.text | translate
+                        subitem.badge.text  
                       }}</span>
                     </a>
                     <a
@@ -89,9 +89,9 @@
                       data-bs-toggle="collapse"
                       aria-expanded="false"
                       (click)="toggleSubItem($event)">
-                      {{ subitem.label | translate }}
+                      {{ subitem.label   }}
                       <span class="badge badge-pill {{ subitem.badge.variant }}" *ngIf="subitem.badge">{{
-                        subitem.badge.text | translate
+                        subitem.badge.text  
                       }}</span>
                     </a>
                     <div class="collapse menu-dropdown sub-menu" *ngIf="hasItems(subitem)">
@@ -103,7 +103,7 @@
                             [routerLink]="subSubitem.link"
                             class="nav-link"
                             (click)="updateActive($event)">
-                            {{ subSubitem.label | translate }}
+                            {{ subSubitem.label   }}
                           </a>
 
                           <a
@@ -114,9 +114,9 @@
                             data-bs-toggle="collapse"
                             aria-expanded="false"
                             (click)="toggleExtraSubItem($event)">
-                            {{ subSubitem.label | translate }}
+                            {{ subSubitem.label   }}
                             <span class="badge badge-pill {{ subSubitem.badge.variant }}" *ngIf="subSubitem.badge">{{
-                              subSubitem.badge.text | translate
+                              subSubitem.badge.text  
                             }}</span>
                           </a>
 
@@ -128,7 +128,7 @@
                                   [routerLink]="subSubitem1.link"
                                   class="nav-link"
                                   (click)="updateActive($event)">
-                                  {{ subSubitem1.label | translate }}
+                                  {{ subSubitem1.label   }}
                                 </a>
                               </li>
                             </ul>

@@ -1,7 +1,4 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
-
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
 
@@ -14,12 +11,9 @@ export class SidebarComponent implements OnInit {
   menu: any;
   toggle: any = true;
   menuItems: MenuItem[] = [];
-  @ViewChild('sideMenu') sideMenu!: ElementRef;
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
-  constructor(private router: Router, public translate: TranslateService) {
-    translate.setDefaultLang('en');
-  }
+  constructor() {}
 
   ngOnInit(): void {
     // Menu Items
@@ -223,7 +217,7 @@ export class SidebarComponent implements OnInit {
    * Toggle the menu bar when having mobile screen
    */
   toggleMobileMenu(event: any) {
-    var sidebarsize = document.documentElement.getAttribute('data-sidebar-size');
+    let sidebarsize = document.documentElement.getAttribute('data-sidebar-size');
     if (sidebarsize == 'sm-hover-active') {
       document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
     } else {

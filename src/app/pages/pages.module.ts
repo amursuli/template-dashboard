@@ -1,18 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgbToastModule, NgbProgressbarModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
-import { CountToModule } from 'angular-count-to';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { ToastsContainer } from './dashboards/dashboard/toasts-container.component';
-
-// Swiper Slider
-import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 import { LightboxModule } from 'ngx-lightbox';
 
@@ -33,7 +28,6 @@ import { DashboardsModule } from './dashboards/dashboards.module';
     CommonModule,
     FormsModule,
     FlatpickrModule.forRoot(),
-    CountToModule,
     NgApexchartsModule,
     LeafletModule,
     NgbDropdownModule,
@@ -41,7 +35,6 @@ import { DashboardsModule } from './dashboards/dashboards.module';
     PagesRoutingModule,
     SharedModule,
     WidgetModule,
-    NgxUsefulSwiperModule,
     LightboxModule,
     DashboardsModule,
   ],

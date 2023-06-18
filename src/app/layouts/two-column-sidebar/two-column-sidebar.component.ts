@@ -1,6 +1,4 @@
 import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 
 import { MENU } from './menu';
 import { MenuItem } from './menu.model';
@@ -14,15 +12,9 @@ export class TwoColumnSidebarComponent implements OnInit {
   menu: any;
   toggle: any = true;
   menuItems: MenuItem[] = [];
-  @ViewChild('sideMenu') sideMenu!: ElementRef;
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
-  constructor(private router: Router, public translate: TranslateService) {
-    // router.events.subscribe((val) => {
-    //   this.initActiveMenu();
-    // });
-    translate.setDefaultLang('en');
-  }
+  constructor() {}
 
   ngOnInit(): void {
     // Menu Items
