@@ -116,7 +116,9 @@ export class TwoColumnSidebarComponent implements OnInit {
     dropDowns.forEach((node: any) => {
       node.classList.remove('show');
     });
-    if() ? isMenu.classList.add('show') : null;
+    if (isMenu) {
+      isMenu.classList.add('show');
+    }
 
     const ul = document.getElementById('two-column-menu');
     if (ul) {

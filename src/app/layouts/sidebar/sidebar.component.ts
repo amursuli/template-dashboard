@@ -218,7 +218,7 @@ export class SidebarComponent implements OnInit {
   /**
    * Toggle the menu bar when having mobile screen
    */
-  toggleMobileMenu(_event) {
+  toggleMobileMenu(event: any) {
     let sidebarsize = document.documentElement.getAttribute('data-sidebar-size');
     if (sidebarsize == 'sm-hover-active') {
       document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');
