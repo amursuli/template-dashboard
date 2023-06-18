@@ -1,4 +1,5 @@
 node_modules
+.angular
 .next
 public/mainfest.json
 public/browserconfig.json
