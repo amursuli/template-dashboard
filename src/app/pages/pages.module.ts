@@ -4,12 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { ToastsContainer } from './dashboards/dashboard/toasts-container.component';
-
-import { LightboxModule } from 'ngx-lightbox';
 
 // Load Icons
 import { defineElement } from 'lord-icon-element';
@@ -29,13 +26,11 @@ import { DashboardsModule } from './dashboards/dashboards.module';
     FormsModule,
     FlatpickrModule.forRoot(),
     NgApexchartsModule,
-    LeafletModule,
     NgbDropdownModule,
     SimplebarAngularModule,
     PagesRoutingModule,
     SharedModule,
     WidgetModule,
-    LightboxModule,
     DashboardsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

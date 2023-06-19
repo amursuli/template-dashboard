@@ -5,7 +5,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Feather Icon
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import {
   NgbDropdownModule,
   NgbNavModule,
@@ -31,7 +30,6 @@ import { WidgetModule } from '../../shared/widget/widget.module';
     CommonModule,
     FeatherModule.pick(allIcons),
     NgbToastModule,
-    LeafletModule,
     NgbDropdownModule,
     NgbNavModule,
     SimplebarAngularModule,
