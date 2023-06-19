@@ -16,21 +16,22 @@ export class ScrollspyDirective {
   /**
    * Window scroll method
    */
-  onScroll(event: any) {
-    let currentSection!: string;
-    const children = this._el.nativeElement.querySelectorAll('section');
-    const scrollTop = this.document.documentElement.scrollTop;
-    const parentOffset = this.document.documentElement.offsetTop;
+  onScroll() {
+    const spiedTags = ['SECTION']; // Update this array with the tags you want to spy on
+    const children = Array.from(this._el.nativeElement.querySelectorAll(spiedTags.join(',')));
+    const scrollTop = this.document.documentElement.scrollTop || this.document.body.scrollTop;
+    const parentOffset = this.document.documentElement.offsetTop || 0;
 
-    // tslint:disable-next-line: prefer-for-of
-    for (let i = 0; i < children.length; i++) {
-      const element = children[i];
-      if (this.spiedTags.some((spiedTag) => spiedTag === element.tagName)) {
-        if (element.offsetTop - parentOffset <= scrollTop) {
-          currentSection = element.id;
-        }
+    let currentSection = '';
+
+    for (let i = children.length - 1; i >= 0; i--) {
+      const element = children[i] as HTMLElement;
+      if (element.offsetTop - parentOffset <= scrollTop) {
+        currentSection = element.id;
+        break;
       }
     }
+
     if (currentSection !== this.currentSection) {
       this.currentSection = currentSection;
       this.sectionChange.emit(this.currentSection);

@@ -53,7 +53,7 @@ export class SidebarComponent implements OnInit {
 
   toggleSubItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
       isMenu.classList.remove('show');
       isCurrentMenuId.setAttribute('aria-expanded', 'false');
@@ -77,7 +77,7 @@ export class SidebarComponent implements OnInit {
 
   toggleExtraSubItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
       isMenu.classList.remove('show');
       isCurrentMenuId.setAttribute('aria-expanded', 'false');
@@ -123,7 +123,7 @@ export class SidebarComponent implements OnInit {
 
   toggleItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
       isMenu.classList.remove('show');
       isCurrentMenuId.setAttribute('aria-expanded', 'false');
@@ -218,7 +218,7 @@ export class SidebarComponent implements OnInit {
   /**
    * Toggle the menu bar when having mobile screen
    */
-  toggleMobileMenu(event: any) {
+  toggleMobileMenu() {
     let sidebarsize = document.documentElement.getAttribute('data-sidebar-size');
     if (sidebarsize == 'sm-hover-active') {
       document.documentElement.setAttribute('data-sidebar-size', 'sm-hover');

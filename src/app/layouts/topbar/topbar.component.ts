@@ -4,7 +4,6 @@ import { EventService } from '../../core/services/event.service';
 
 //Logout
 import { AuthenticationService } from '../../core/services/auth.service';
-import { AuthfakeauthenticationService } from '../../core/services/authfake.service';
 import { TokenStorageService } from '../../core/services/token-storage.service';
 import { Router } from '@angular/router';
 
@@ -36,7 +35,6 @@ export class TopbarComponent implements OnInit {
     @Inject(DOCUMENT) private document: any,
     private eventService: EventService,
     private authService: AuthenticationService,
-    private authFackservice: AuthfakeauthenticationService,
     private router: Router,
     private tokenStorageService: TokenStorageService
   ) {}
@@ -121,20 +119,6 @@ export class TopbarComponent implements OnInit {
     }
   }
 
-  /***
-   * Language Listing
-   */
-  listLang = [
-    { text: 'English', flag: '', lang: 'en' },
-    { text: 'Española', flag: '', lang: 'es' },
-    { text: 'Deutsche', flag: '', lang: 'de' },
-    { text: 'Italiana', flag: '', lang: 'it' },
-    { text: 'русский', flag: '', lang: 'ru' },
-    { text: '中国人', flag: '', lang: 'ch' },
-    { text: 'français', flag: '', lang: 'fr' },
-    { text: 'Arabic', flag: '', lang: 'ar' },
-  ];
-
   /**
    * Logout the user
    */
@@ -154,46 +138,57 @@ export class TopbarComponent implements OnInit {
   }
 
   // Delete Item
-  deleteItem(event: any, id: any) {
-    let price = event.target.closest('.dropdown-item').querySelector('.item_price').innerHTML;
-    let Total_price = this.total - price;
-    this.total = Total_price;
-    this.cart_length = this.cart_length - 1;
-    this.total > 1
-      ? ((document.getElementById('empty-cart') as HTMLElement).style.display = 'none')
-      : ((document.getElementById('empty-cart') as HTMLElement).style.display = 'block');
-    document.getElementById('item_' + id)?.remove();
+  deleteItem(event: Event, id: string) {
+    const target = event.target as HTMLElement;
+    const dropdownItem = target.closest('.dropdown-item');
+    if (!dropdownItem) {
+      return;
+    }
+
+    const priceElement = dropdownItem.querySelector('.item_price') as HTMLElement;
+    if (!priceElement) {
+      return;
+    }
+
+    const price = parseFloat(priceElement.innerHTML);
+    const total_price = this.total - price;
+    this.total = total_price;
+    this.cart_length -= 1;
+
+    const emptyCartElement = document.getElementById('empty-cart') as HTMLElement;
+    emptyCartElement.style.display = this.total > 1 ? 'none' : 'block';
+
+    const itemElement = document.getElementById('item_' + id);
+    if (itemElement) {
+      itemElement.remove();
+    }
   }
 
   // Search Topbar
   Search() {
-    const searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
-    const dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
-    let input: any, filter: any, ul: any, li: any, a: any | undefined, i: any, txtValue: any;
-    input = document.getElementById('search-options') as HTMLAreaElement;
-    filter = input.value.toUpperCase();
-    let inputLength = filter.length;
+    const input = document.getElementById('search-options') as HTMLInputElement;
+    const filter = input.value.toUpperCase();
+    const dropdown = document.getElementById('search-dropdown') as HTMLElement;
+    const searchOptions = document.getElementById('search-close-options') as HTMLElement;
 
-    if (inputLength > 0) {
+    if (filter.length > 0) {
       dropdown.classList.add('show');
       searchOptions.classList.remove('d-none');
-      let inputVal = input.value.toUpperCase();
-      let notifyItem = document.getElementsByClassName('notify-item');
 
-      Array.from(notifyItem).forEach(function (element: any) {
+      const notifyItems = document.getElementsByClassName('notify-item');
+
+      Array.from(notifyItems).forEach((element: any) => {
         let notifiTxt = '';
+
         if (element.querySelector('h6')) {
-          let spantext = element.getElementsByTagName('span')[0].innerText.toLowerCase();
-          let name = element.querySelector('h6').innerText.toLowerCase();
-          if (name.includes(inputVal)) {
-            notifiTxt = name;
-          } else {
-            notifiTxt = spantext;
-          }
+          const spanText = element.getElementsByTagName('span')[0].innerText.toLowerCase();
+          const name = element.querySelector('h6')?.innerText.toLowerCase();
+          notifiTxt = name?.includes(filter) ? name : spanText;
         } else if (element.getElementsByTagName('span')) {
           notifiTxt = element.getElementsByTagName('span')[0].innerText.toLowerCase();
         }
-        if (notifiTxt) element.style.display = notifiTxt.includes(inputVal) ? 'block' : 'none';
+
+        element.style.display = notifiTxt.includes(filter) ? 'block' : 'none';
       });
     } else {
       dropdown.classList.remove('show');

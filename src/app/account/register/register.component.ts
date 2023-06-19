@@ -59,16 +59,17 @@ export class RegisterComponent implements OnInit {
     this.authenticationService
       .register(this.f['email'].value, this.f['name'].value, this.f['password'].value)
       .pipe(first())
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
           this.successmsg = true;
           if (this.successmsg) {
             this.router.navigate(['/auth/login']);
           }
         },
-        (error: any) => {
-          this.error = error ? error : '';
-        }
-      );
+        error: (err: any) => {
+          this.error = err || '';
+        },
+        complete: () => undefined,
+      });
   }
 }

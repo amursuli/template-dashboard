@@ -108,7 +108,7 @@ export class HorizontalTopbarComponent implements OnInit {
   toggleItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
 
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     let dropDowns = Array.from(document.querySelectorAll('#navbar-nav .show'));
     dropDowns.forEach((node: any) => {
       node.classList.remove('show');

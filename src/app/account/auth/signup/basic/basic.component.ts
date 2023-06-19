@@ -72,7 +72,7 @@ export class BasicComponent implements OnInit {
       }
 
       // Validate numbers
-      var numbers = /[0-9]/g;
+      let numbers = /\d+/g;
       if (myInput.value.match(numbers)) {
         number?.classList.remove('invalid');
         number?.classList.add('valid');

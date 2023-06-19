@@ -44,26 +44,22 @@ export class VerticalComponent implements OnInit {
    */
   onToggleMobileMenu() {
     document.body.classList.toggle('sidebar-enable');
-    const currentSIdebarSize = document.documentElement.getAttribute('data-sidebar-size');
+    const currentSidebarSize = document.documentElement.getAttribute('data-sidebar-size');
+
     if (document.documentElement.clientWidth >= 767) {
-      if (currentSIdebarSize == null) {
-        document.documentElement.getAttribute('data-sidebar-size') == null ||
-        document.documentElement.getAttribute('data-sidebar-size') == 'lg'
-          ? document.documentElement.setAttribute('data-sidebar-size', 'sm')
-          : document.documentElement.setAttribute('data-sidebar-size', 'lg');
-      } else if (currentSIdebarSize == 'md') {
-        document.documentElement.getAttribute('data-sidebar-size') == 'md'
-          ? document.documentElement.setAttribute('data-sidebar-size', 'sm')
-          : document.documentElement.setAttribute('data-sidebar-size', 'md');
+      if (!currentSidebarSize || currentSidebarSize === 'lg') {
+        document.documentElement.setAttribute('data-sidebar-size', 'sm');
+      } else if (currentSidebarSize === 'md') {
+        document.documentElement.setAttribute('data-sidebar-size', 'sm');
       } else {
-        document.documentElement.getAttribute('data-sidebar-size') == 'sm'
-          ? document.documentElement.setAttribute('data-sidebar-size', 'lg')
-          : document.documentElement.setAttribute('data-sidebar-size', 'sm');
+        document.documentElement.setAttribute('data-sidebar-size', 'lg');
       }
     }
+
     if (document.documentElement.clientWidth <= 767) {
       document.body.classList.toggle('vertical-sidebar-enable');
     }
+
     this.isCondensed = !this.isCondensed;
   }
 

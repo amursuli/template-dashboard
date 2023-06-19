@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 // Login Auth
 import { AuthenticationService } from '../../core/services/auth.service';
-import { AuthfakeauthenticationService } from '../../core/services/authfake.service';
 import { ToastService } from './toast-service';
 
 @Component({
@@ -30,7 +29,6 @@ export class LoginComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private authenticationService: AuthenticationService,
     private router: Router,
-    private authFackservice: AuthfakeauthenticationService,
     private route: ActivatedRoute,
     public toastService: ToastService
   ) {

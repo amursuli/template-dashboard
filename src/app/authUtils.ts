@@ -20,41 +20,38 @@ class FirebaseAuthBackend {
   /**
    * Registers the user with given details
    */
-  registerUser = (email: any, password: any) => {
+  registerUser = (email: string, password: string) => {
     return new Promise((resolve, reject) => {
       firebase
         .auth()
         .createUserWithEmailAndPassword(email, password)
-        .then(
-          (user: any) => {
-            user = firebase.auth().currentUser;
-            resolve(user);
-          },
-          (error: any) => {
-            reject(this._handleError(error));
-          }
-        );
+        .then((userCredential) => {
+          const user = userCredential.user;
+          resolve(user);
+        })
+        .catch((error) => {
+          const errorMessage = this._handleError(error);
+          reject(errorMessage);
+        });
     });
   };
 
   /**
    * Login user with given details
    */
-  loginUser = (email: any, password: any) => {
+  loginUser = (email: string, password: string) => {
     return new Promise((resolve, reject) => {
       firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
-        .then(
-          (user: any) => {
-            // eslint-disable-next-line no-redeclare
-            user = firebase.auth().currentUser;
-            resolve(user);
-          },
-          (error: any) => {
-            reject(this._handleError(error));
-          }
-        );
+        .then((userCredential) => {
+          const user = userCredential.user;
+          resolve(user);
+        })
+        .catch((error) => {
+          const errorMessage = this._handleError(error);
+          reject(errorMessage);
+        });
     });
   };
 

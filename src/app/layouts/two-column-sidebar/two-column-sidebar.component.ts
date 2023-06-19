@@ -30,7 +30,7 @@ export class TwoColumnSidebarComponent implements OnInit {
 
   toggleSubItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
       isMenu.classList.remove('show');
       isCurrentMenuId.setAttribute('aria-expanded', 'false');
@@ -54,7 +54,7 @@ export class TwoColumnSidebarComponent implements OnInit {
 
   toggleExtraSubItem(event: any) {
     let isCurrentMenuId = event.target.closest('a.nav-link');
-    let isMenu = isCurrentMenuId.nextElementSibling as any;
+    let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
       isMenu.classList.remove('show');
       isCurrentMenuId.setAttribute('aria-expanded', 'false');
@@ -176,7 +176,7 @@ export class TwoColumnSidebarComponent implements OnInit {
       this.activateIconSidebarActive(parentCollapseDiv.getAttribute('id'));
       return false;
     }
-    return false;
+    return true;
   }
 
   initActiveMenu() {
