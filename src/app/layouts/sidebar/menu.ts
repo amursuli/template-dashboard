@@ -8,7 +8,7 @@ export const MENU: MenuItem[] = [
   },
   {
     id: 2,
-    label: 'Dashboard',
+    label: 'DASHBOARD',
     icon: 'ri-dashboard-2-line',
     subItems: [
       {
@@ -16,6 +16,19 @@ export const MENU: MenuItem[] = [
         label: 'Dashboard',
         link: '',
         parentId: 2,
+      },
+    ],
+  },
+  {
+    id: 4,
+    label: 'PAGE',
+    icon: 'ri-pages-line',
+    subItems: [
+      {
+        id: 5,
+        label: 'Page',
+        link: '',
+        parentId: 4,
       },
     ],
   },
