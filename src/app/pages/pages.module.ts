@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { FlatpickrModule } from 'angularx-flatpickr';
-import { NgApexchartsModule } from 'ng-apexcharts';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimplebarAngularModule } from 'simplebar-angular';
 import { ToastsContainer } from './dashboards/dashboard/toasts-container.component';
@@ -25,7 +24,6 @@ import { DashboardsModule } from './dashboards/dashboards.module';
     CommonModule,
     FormsModule,
     FlatpickrModule.forRoot(),
-    NgApexchartsModule,
     NgbDropdownModule,
     SimplebarAngularModule,
     PagesRoutingModule,

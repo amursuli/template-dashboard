@@ -15,7 +15,6 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { SimplebarAngularModule } from 'simplebar-angular';
 // Apex Chart Package
-import { NgApexchartsModule } from 'ng-apexcharts';
 import { FlatpickrModule } from 'angularx-flatpickr';
 
 //Module
@@ -33,7 +32,6 @@ import { WidgetModule } from '../../shared/widget/widget.module';
     NgbDropdownModule,
     NgbNavModule,
     SimplebarAngularModule,
-    NgApexchartsModule,
     FlatpickrModule.forRoot(),
     DashboardsRoutingModule,
     SharedModule,

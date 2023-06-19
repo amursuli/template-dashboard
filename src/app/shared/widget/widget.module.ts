@@ -5,19 +5,10 @@ import { NgbTooltipModule, NgbProgressbarModule, NgbDropdownModule } from '@ng-b
 // Feather Icon
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
-// Apex Chart Package
-import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    NgbTooltipModule,
-    NgbProgressbarModule,
-    NgbDropdownModule,
-    FeatherModule.pick(allIcons),
-    NgApexchartsModule,
-  ],
+  imports: [CommonModule, NgbTooltipModule, NgbProgressbarModule, NgbDropdownModule, FeatherModule.pick(allIcons)],
   exports: [],
 })
 export class WidgetModule {}
