@@ -108,6 +108,10 @@ export class TwoColumnSidebarComponent implements OnInit {
     document.body.classList.add('twocolumn-panel');
   }
 
+  /**
+   * Toggle side bar behavior
+   * @param event
+   */
   toggleItem(event: any) {
     // show navbar-nav menu on click of icon sidebar menu
     let isCurrentMenuId = event.target.getAttribute('subitems');
@@ -133,7 +137,10 @@ export class TwoColumnSidebarComponent implements OnInit {
     document.querySelector('.hamburger-icon')?.classList.add('open');
   }
 
-  // remove active items of two-column-menu
+  /**
+   * Remove active items of two-column-menu
+   * @param items
+   */
   removeActivation(items: any) {
     items.forEach((item: any) => {
       if (item.classList.contains('menu-link')) {
@@ -204,7 +211,7 @@ export class TwoColumnSidebarComponent implements OnInit {
       if (matchingMenuItem) {
         this.activateParentDropdown(matchingMenuItem);
       } else {
-        var id = pathName.replace('/', '');
+        let id = pathName.replace('/', '');
         if (id) document.body.classList.add('twocolumn-panel');
         this.activateIconSidebarActive(id);
       }

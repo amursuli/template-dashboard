@@ -23,7 +23,7 @@ export class HorizontalComponent implements OnInit {
   }
 
   /**
-   * on settings button clicked from topbar
+   * on settings button clicked from top bar
    */
   onSettingsButtonClicked() {
     document.body.classList.toggle('right-bar-enabled');
