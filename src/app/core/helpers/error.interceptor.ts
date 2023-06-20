@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpErrorResponse } from '@angular/common/http';
+import { catchError, retry } from 'rxjs/operators';
 import { AuthenticationService } from '../services/auth.service';
 // @ts-ignore
 import { Observable, throwError } from 'rxjs';
@@ -11,7 +11,8 @@ export class ErrorInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
-      catchError((err) => {
+      retry(1),
+      catchError((err: HttpErrorResponse) => {
         if (err.status === 401) {
           // auto logout if 401 response returned from api
           this.authenticationService.logout();

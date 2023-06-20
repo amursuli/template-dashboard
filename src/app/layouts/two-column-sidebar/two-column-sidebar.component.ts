@@ -160,7 +160,7 @@ export class TwoColumnSidebarComponent implements OnInit {
   }
 
   activateIconSidebarActive(id: any) {
-    var menu = document.querySelector("#two-column-menu .simplebar-content-wrapper a[subitems='" + id + "'].nav-icon");
+    let menu = document.querySelector("#two-column-menu .simplebar-content-wrapper a[subitems='" + id + "'].nav-icon");
     if (menu !== null) {
       menu.classList.add('active');
     }
