@@ -3,7 +3,7 @@ import { Router, RouterStateSnapshot } from '@angular/router';
 
 // Auth Services
 import { AuthenticationService } from '../services/auth.service';
-import { environment } from '../../../environments/environment';
+import { environment } from '../.././environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard {
