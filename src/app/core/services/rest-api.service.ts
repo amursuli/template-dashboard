@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// @ts-ignore
 import { Observable } from 'rxjs';
 import { GlobalComponent } from '../../global-component';
 

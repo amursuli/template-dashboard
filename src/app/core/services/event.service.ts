@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+// @ts-ignore
 import { Subject, Subscription } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 

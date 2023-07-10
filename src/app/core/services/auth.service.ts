@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { getFirebaseBackend } from '../../authUtils';
 import { User } from '../models/auth.models';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// @ts-ignore
 import { BehaviorSubject } from 'rxjs';
 import { GlobalComponent } from '../../global-component';
 
