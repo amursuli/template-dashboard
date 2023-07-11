@@ -9,8 +9,7 @@ import { MenuItem } from './menu.model';
   styleUrls: ['./two-column-sidebar.component.scss'],
 })
 export class TwoColumnSidebarComponent implements OnInit {
-  menu: any;
-  toggle: any = true;
+  toggle: boolean = true;
   menuItems: MenuItem[] = [];
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
@@ -28,7 +27,7 @@ export class TwoColumnSidebarComponent implements OnInit {
     }, 0);
   }
 
-  toggleSubItem(event: any) {
+  toggleSubItem(event: any): void {
     let isCurrentMenuId = event.target.closest('a.nav-link');
     let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
@@ -52,7 +51,7 @@ export class TwoColumnSidebarComponent implements OnInit {
     }
   }
 
-  toggleExtraSubItem(event: any) {
+  toggleExtraSubItem(event: any): void {
     let isCurrentMenuId = event.target.closest('a.nav-link');
     let isMenu = isCurrentMenuId.nextElementSibling;
     if (isMenu.classList.contains('show')) {
@@ -76,7 +75,7 @@ export class TwoColumnSidebarComponent implements OnInit {
     }
   }
 
-  updateActive(event: any) {
+  updateActive(event: any): void {
     const ul = document.getElementById('navbar-nav');
     if (ul) {
       const items = Array.from(ul.querySelectorAll('a.nav-link.active'));
@@ -86,7 +85,7 @@ export class TwoColumnSidebarComponent implements OnInit {
   }
 
   // Click wise Parent active class add
-  toggleParentItem(event: any) {
+  toggleParentItem(event: any): void {
     let isCurrentMenuId = event.target.getAttribute('subitems');
     let isMenu = document.getElementById(isCurrentMenuId) as any;
     let dropDowns = Array.from(document.querySelectorAll('#navbar-nav .show'));
@@ -112,7 +111,7 @@ export class TwoColumnSidebarComponent implements OnInit {
    * Toggle side bar behavior
    * @param event
    */
-  toggleItem(event: any) {
+  toggleItem(event: any): void {
     // show navbar-nav menu on click of icon sidebar menu
     let isCurrentMenuId = event.target.getAttribute('subitems');
     let isMenu = document.getElementById(isCurrentMenuId) as any;
@@ -141,7 +140,7 @@ export class TwoColumnSidebarComponent implements OnInit {
    * Remove active items of two-column-menu
    * @param items
    */
-  removeActivation(items: any) {
+  removeActivation(items: any): void {
     items.forEach((item: any) => {
       if (item.classList.contains('menu-link')) {
         if (!item.classList.contains('active')) {
@@ -159,14 +158,14 @@ export class TwoColumnSidebarComponent implements OnInit {
     });
   }
 
-  activateIconSidebarActive(id: any) {
+  activateIconSidebarActive(id: any): void {
     let menu = document.querySelector("#two-column-menu .simplebar-content-wrapper a[subitems='" + id + "'].nav-icon");
     if (menu !== null) {
       menu.classList.add('active');
     }
   }
 
-  activateParentDropdown(item: any) {
+  activateParentDropdown(item: any): boolean {
     // navbar-nav menu add active
     item.classList.add('active');
     let parentCollapseDiv = item.closest('.collapse.menu-dropdown');
@@ -186,7 +185,7 @@ export class TwoColumnSidebarComponent implements OnInit {
     return true;
   }
 
-  initActiveMenu() {
+  initActiveMenu(): void {
     const pathName = window.location.pathname;
 
     // Active Main Single Menu

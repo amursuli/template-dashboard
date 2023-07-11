@@ -42,7 +42,7 @@ export class VerticalComponent implements OnInit {
   /**
    * On mobile toggle button clicked
    */
-  onToggleMobileMenu() {
+  onToggleMobileMenu(): void {
     document.body.classList.toggle('sidebar-enable');
     const currentSidebarSize = document.documentElement.getAttribute('data-sidebar-size');
 
@@ -66,7 +66,7 @@ export class VerticalComponent implements OnInit {
   /**
    * on settings button clicked from topbar
    */
-  onSettingsButtonClicked() {
+  onSettingsButtonClicked(): void {
     document.body.classList.toggle('right-bar-enabled');
     const rightBar = document.getElementById('theme-settings-offcanvas');
     if (rightBar != null) {
@@ -75,7 +75,7 @@ export class VerticalComponent implements OnInit {
     }
   }
 
-  onResize(event: any) {
+  onResize(event: any): void {
     if (document.body.getAttribute('layout') == 'twocolumn') {
       if (event.target.innerWidth <= 767) {
         this.eventService.broadcast('changeLayout', 'vertical');

@@ -8,8 +8,7 @@ import { MenuItem } from './menu.model';
   styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent implements OnInit {
-  menu: any;
-  toggle: any = true;
+  toggle: boolean = true;
   menuItems: MenuItem[] = [];
   @Output() mobileMenuButtonClicked = new EventEmitter();
 

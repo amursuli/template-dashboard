@@ -7,10 +7,6 @@ import { AuthenticationService } from '../../core/services/auth.service';
 import { TokenStorageService } from '../../core/services/token-storage.service';
 import { Router } from '@angular/router';
 
-// Language
-import { CartModel } from './topbar.model';
-import { cartData } from './data';
-
 @Component({
   selector: 'app-topbar',
   templateUrl: './topbar.component.html',
@@ -21,9 +17,7 @@ export class TopbarComponent implements OnInit {
   mode: string | undefined;
   @Output() mobileMenuButtonClicked = new EventEmitter();
 
-  cartData!: CartModel[];
   total = 0;
-  cart_length: any = 0;
   userData: any;
 
   flagvalue: any;
@@ -42,20 +36,12 @@ export class TopbarComponent implements OnInit {
   ngOnInit(): void {
     this.userData = this.tokenStorageService.getUser();
     this.element = document.documentElement;
-
-    //  Fetch Data
-    this.cartData = cartData;
-    this.cart_length = this.cartData.length;
-    this.cartData.forEach((item) => {
-      let item_price = item.quantity * item.price;
-      this.total += item_price;
-    });
   }
 
   /**
    * Toggle the menu bar when having mobile screen
    */
-  toggleMobileMenu(event: any) {
+  toggleMobileMenu(event: any): void {
     if (document.documentElement.clientWidth > 767) {
       document.querySelector('.hamburger-icon')?.classList.toggle('open');
     }
@@ -66,7 +52,7 @@ export class TopbarComponent implements OnInit {
   /**
    * Fullscreen method
    */
-  fullscreen() {
+  fullscreen(): void {
     document.body.classList.toggle('fullscreen-enable');
     if (!document.fullscreenElement && !this.element.mozFullScreenElement && !this.element.webkitFullscreenElement) {
       if (this.element.requestFullscreen) {
@@ -100,7 +86,7 @@ export class TopbarComponent implements OnInit {
   /**
    * Topbar Light-Dark Mode Change
    */
-  changeMode(mode: string) {
+  changeMode(mode: string): void {
     this.mode = mode;
     this.eventService.broadcast('changeMode', mode);
 
@@ -122,12 +108,12 @@ export class TopbarComponent implements OnInit {
   /**
    * Logout the user
    */
-  logout() {
+  logout(): void {
     this.authService.logout();
     this.router.navigate(['/auth/login']);
   }
 
-  windowScroll() {
+  windowScroll(): void {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       (document.getElementById('back-to-top') as HTMLElement).style.display = 'block';
       document.getElementById('page-topbar')?.classList.add('topbar-shadow');
@@ -137,35 +123,8 @@ export class TopbarComponent implements OnInit {
     }
   }
 
-  // Delete Item
-  deleteItem(event: Event, id: string) {
-    const target = event.target as HTMLElement;
-    const dropdownItem = target.closest('.dropdown-item');
-    if (!dropdownItem) {
-      return;
-    }
-
-    const priceElement = dropdownItem.querySelector('.item_price') as HTMLElement;
-    if (!priceElement) {
-      return;
-    }
-
-    const price = parseFloat(priceElement.innerHTML);
-    const total_price = this.total - price;
-    this.total = total_price;
-    this.cart_length -= 1;
-
-    const emptyCartElement = document.getElementById('empty-cart') as HTMLElement;
-    emptyCartElement.style.display = this.total > 1 ? 'none' : 'block';
-
-    const itemElement = document.getElementById('item_' + id);
-    if (itemElement) {
-      itemElement.remove();
-    }
-  }
-
   // Search Topbar
-  Search() {
+  Search(): void {
     const input = document.getElementById('search-options') as HTMLInputElement;
     const filter = input.value.toUpperCase();
     const dropdown = document.getElementById('search-dropdown') as HTMLElement;
@@ -199,7 +158,7 @@ export class TopbarComponent implements OnInit {
   /**
    * Search Close Btn
    */
-  closeBtn() {
+  closeBtn(): void {
     const searchOptions = document.getElementById('search-close-options') as HTMLAreaElement;
     const dropdown = document.getElementById('search-dropdown') as HTMLAreaElement;
     const searchInputReponsive = document.getElementById('search-options') as HTMLInputElement;

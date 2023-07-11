@@ -25,7 +25,7 @@ export class HorizontalComponent implements OnInit {
   /**
    * on settings button clicked from top bar
    */
-  onSettingsButtonClicked() {
+  onSettingsButtonClicked(): void {
     document.body.classList.toggle('right-bar-enabled');
     const rightBar = document.getElementById('theme-settings-offcanvas');
     if (rightBar != null) {
@@ -37,7 +37,7 @@ export class HorizontalComponent implements OnInit {
   /**
    * On mobile toggle button clicked
    */
-  onToggleMobileMenu() {
+  onToggleMobileMenu(): void {
     if (document.documentElement.clientWidth <= 1024) {
       document.body.classList.toggle('menu');
     }

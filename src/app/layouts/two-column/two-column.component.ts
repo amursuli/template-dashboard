@@ -46,7 +46,7 @@ export class TwoColumnComponent implements OnInit {
   /**
    * On mobile toggle button clicked
    */
-  onToggleMobileMenu() {
+  onToggleMobileMenu(): void {
     if (document.documentElement.clientWidth <= 767) {
       document.body.classList.toggle('vertical-sidebar-enable');
     } else {
@@ -57,7 +57,7 @@ export class TwoColumnComponent implements OnInit {
   /**
    * on settings button clicked from topbar
    */
-  onSettingsButtonClicked() {
+  onSettingsButtonClicked(): void {
     document.body.classList.toggle('right-bar-enabled');
     const rightBar = document.getElementById('theme-settings-offcanvas');
     if (rightBar != null) {
@@ -66,7 +66,7 @@ export class TwoColumnComponent implements OnInit {
     }
   }
 
-  onResize(event: any) {
+  onResize(event: any): void {
     if (document.body.getAttribute('layout') == 'twocolumn') {
       if (event.target.innerWidth <= 767) {
         this.eventService.broadcast('changeLayout', 'vertical');
@@ -78,11 +78,11 @@ export class TwoColumnComponent implements OnInit {
     }
   }
 
-  isTwoColumnLayoutRequested() {
+  isTwoColumnLayoutRequested(): boolean {
     return 'twocolumn' === document.documentElement.getAttribute('data-layout');
   }
 
-  issemiboxLayoutRequested() {
+  issemiboxLayoutRequested(): boolean {
     return 'semibox' === document.documentElement.getAttribute('data-layout');
   }
 }
